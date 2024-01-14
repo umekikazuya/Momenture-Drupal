@@ -1,0 +1,14 @@
+uuid: b7f2708f-5d0a-47ec-8a83-53ed7b3021c8
+langcode: ja
+status: true
+dependencies:
+  config:
+    - user.role.developer
+  module:
+    - user
+id: user_remove_role_action.developer
+label: '選択したユーザーから 開発者 の役割を削除'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: developer
