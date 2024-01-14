@@ -1,0 +1,11 @@
+uuid: ad8e59e1-e389-4890-8130-634c05774be2
+langcode: ja
+status: true
+dependencies:
+  config:
+    - node.type.monologue
+id: node.monologue
+target_entity_type_id: node
+target_bundle: monologue
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,33 @@
+uuid: 89bafe64-234d-467d-9586-ae73f40b373e
+langcode: ja
+status: true
+dependencies:
+  config:
+    - field.field.node.notebook.field_image
+    - node.type.notebook
+  module:
+    - image
+    - user
+id: node.notebook.default
+targetEntityType: node
+bundle: notebook
+mode: default
+content:
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
