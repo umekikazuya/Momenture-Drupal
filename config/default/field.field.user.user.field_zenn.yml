@@ -1,0 +1,20 @@
+uuid: 1f8c77f6-05f2-4b52-92b4-e1fd29cd9868
+langcode: ja
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_zenn
+  module:
+    - user
+id: user.user.field_zenn
+field_name: field_zenn
+entity_type: user
+bundle: user
+label: Zenn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
