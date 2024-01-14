@@ -1,0 +1,13 @@
+uuid: 5be15937-5a56-4127-b9ac-1d458169ae81
+langcode: ja
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: KgGJDZFpMaz_8bTv6fN1bXS3Qi5LWmRJI9R53kEGsNQ
+id: node.teaser
+label: ティーザー
+description: ''
+targetEntityType: node
+cache: true

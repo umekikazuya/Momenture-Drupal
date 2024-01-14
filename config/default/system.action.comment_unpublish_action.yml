@@ -1,0 +1,13 @@
+uuid: 13e48171-7fe5-412e-8719-fac95b787455
+langcode: ja
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: tWOIjSMobEWOFZddMkNqb9JySbOVwE1diC6NRqcfLTk
+id: comment_unpublish_action
+label: コメントを非公開にする
+type: comment
+plugin: 'entity:unpublish_action:comment'
+configuration: {  }

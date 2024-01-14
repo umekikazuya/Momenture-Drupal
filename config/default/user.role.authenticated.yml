@@ -1,0 +1,30 @@
+uuid: 87333445-a6ca-4534-a3c1-2618785b556b
+langcode: ja
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - comment
+    - contact
+    - file
+    - filter
+    - search
+    - shortcut
+    - system
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 認証済みユーザー
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'delete own files'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
