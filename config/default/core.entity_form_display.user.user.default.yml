@@ -2,11 +2,7 @@ uuid: a7db6857-ac6a-4a37-b29d-8ee20ad0e853
 langcode: ja
 status: true
 dependencies:
-  config:
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
@@ -27,13 +23,5 @@ content:
   timezone:
     weight: 6
     region: content
-  user_picture:
-    type: image_image
-    weight: -1
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
 hidden:
   langcode: true

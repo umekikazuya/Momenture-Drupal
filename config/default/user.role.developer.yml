@@ -1,0 +1,108 @@
+uuid: 8b6ab38f-103f-4301-b4a9-61d4d864bfae
+langcode: ja
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - filter.format.full_html
+    - filter.format.restricted_html
+  module:
+    - block
+    - block_content
+    - config
+    - contextual
+    - eck
+    - field_ui
+    - file
+    - filter
+    - image
+    - language
+    - locale
+    - node
+    - path
+    - search
+    - system
+    - taxonomy
+    - toolbar
+    - update
+    - views_ui
+id: developer
+label: 開発者
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer block content'
+  - 'administer block types'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer block_content form display'
+  - 'administer blocks'
+  - 'administer content types'
+  - 'administer display modes'
+  - 'administer eck entities'
+  - 'administer eck entity bundles'
+  - 'administer eck entity types'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer languages'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer permissions'
+  - 'administer search'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'administer users'
+  - 'administer views'
+  - 'bypass eck entity access'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create basic block content'
+  - 'create url aliases'
+  - 'delete all revisions'
+  - 'delete any basic block content'
+  - 'delete any basic block content revisions'
+  - 'delete any file'
+  - 'edit any basic block content'
+  - 'export configuration'
+  - 'import configuration'
+  - 'link to any page'
+  - 'revert all revisions'
+  - 'revert any basic block content revisions'
+  - 'select account cancellation method'
+  - 'synchronize configuration'
+  - 'translate interface'
+  - 'use advanced search'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view all revisions'
+  - 'view any basic block content history'
+  - 'view own unpublished content'
+  - 'view the administration theme'
+  - 'view unpublished eck entities'
+  - 'view update notifications'
+  - 'view user email addresses'

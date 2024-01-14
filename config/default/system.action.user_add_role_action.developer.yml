@@ -1,0 +1,14 @@
+uuid: 49d23161-31ed-4c6b-9731-a420486f4419
+langcode: ja
+status: true
+dependencies:
+  config:
+    - user.role.developer
+  module:
+    - user
+id: user_add_role_action.developer
+label: 選択したユーザーに開発者の役割を追加
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: developer
