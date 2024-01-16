@@ -1,0 +1,50 @@
+uuid: 119d44dc-7613-4f80-8298-bbdb14a006b4
+langcode: ja
+status: true
+dependencies:
+  config:
+    - field.field.node.notebook.field_image
+    - image.style.thumbnail
+    - node.type.notebook
+  module:
+    - image
+id: node.notebook.default
+targetEntityType: node
+bundle: notebook
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

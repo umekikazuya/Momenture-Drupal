@@ -1,0 +1,20 @@
+uuid: ce309cc8-8236-45fa-a5a4-8a9f08237880
+langcode: ja
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_github
+  module:
+    - user
+id: user.user.field_github
+field_name: field_github
+entity_type: user
+bundle: user
+label: Github
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

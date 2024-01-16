@@ -1,0 +1,18 @@
+uuid: b8fcedfc-7110-42a7-9c9e-54acc2fa396c
+langcode: ja
+status: true
+dependencies:
+  config:
+    - node.type.monologue
+id: node.monologue.title
+field_name: title
+entity_type: node
+bundle: monologue
+label: ひとりごと
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

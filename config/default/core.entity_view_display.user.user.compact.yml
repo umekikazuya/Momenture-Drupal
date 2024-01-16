@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_github
+    - field.field.user.user.field_introduction
+    - field.field.user.user.field_qiita
+    - field.field.user.user.field_summary_introduction
+    - field.field.user.user.field_zenn
   module:
     - user
 _core:
@@ -14,5 +19,10 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
+  field_github: true
+  field_introduction: true
+  field_qiita: true
+  field_summary_introduction: true
+  field_zenn: true
   langcode: true
   member_for: true
