@@ -1,0 +1,21 @@
+uuid: f3ac6788-220c-489f-a3d7-39622dce5ca3
+langcode: ja
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_zenn
+field_name: field_zenn
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

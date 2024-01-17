@@ -1,0 +1,17 @@
+uuid: 146068ad-e370-4746-a716-001664e486d8
+langcode: ja
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: ひとりごと
+type: monologue
+description: "・読書して感じたこと\r\n・日常でふと思ったこと"
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
