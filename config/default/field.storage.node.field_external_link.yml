@@ -1,0 +1,19 @@
+uuid: a036993c-77e1-49f5-a926-be4941c69a31
+langcode: ja
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_external_link
+field_name: field_external_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

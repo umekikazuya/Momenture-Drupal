@@ -1,0 +1,21 @@
+uuid: 0c1ca90e-7f10-4749-b52e-0451ca535355
+langcode: ja
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_external
+    - node.type.library
+id: node.library.field_is_external
+field_name: field_is_external
+entity_type: node
+bundle: library
+label: 外部リンク
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: オン
+  off_label: オフ
+field_type: boolean
