@@ -22,6 +22,7 @@
         "drupal/core-recommended": "^10.2",
         "drupal/eck": "^2.0",
         "drupal/field_group": "^3.4",
+        "drupal/jsonapi_extras": "^3.24",
         "drush/drush": "^12.4"
     },
     "conflict": {
