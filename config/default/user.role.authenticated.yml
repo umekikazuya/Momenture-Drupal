@@ -9,6 +9,7 @@ dependencies:
     - filter
     - search
     - system
+    - toolbar
 _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
 id: authenticated
@@ -17,6 +18,12 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer themes'
+  - 'cancel account'
+  - 'change own username'
   - 'delete own files'
   - 'search content'
   - 'use text format basic_html'
+  - 'view user email addresses'
