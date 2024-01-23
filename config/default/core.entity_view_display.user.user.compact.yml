@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_display_name
     - field.field.user.user.field_github
     - field.field.user.user.field_introduction
     - field.field.user.user.field_qiita
@@ -19,6 +20,7 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
+  field_display_name: true
   field_github: true
   field_introduction: true
   field_qiita: true
