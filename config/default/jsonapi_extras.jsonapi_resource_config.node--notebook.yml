@@ -128,4 +128,4 @@ resourceFields:
     fieldName: field_image
     publicName: field_image
     enhancer:
-      id: uuid_link
+      id: ''

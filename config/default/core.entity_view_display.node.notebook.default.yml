@@ -14,13 +14,10 @@ bundle: notebook
 mode: default
 content:
   field_image:
-    type: image
+    type: image_url
     label: above
     settings:
-      image_link: ''
       image_style: ''
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 101
     region: content
