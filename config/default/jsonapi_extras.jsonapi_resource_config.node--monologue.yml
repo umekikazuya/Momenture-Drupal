@@ -80,7 +80,9 @@ resourceFields:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y / m / d'
   changed:
     disabled: true
     fieldName: changed
