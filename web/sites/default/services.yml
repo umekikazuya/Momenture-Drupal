@@ -206,22 +206,21 @@ parameters:
   # for more information about the topic in general.
   # Note: By default the configuration is disabled.
   cors.config:
-    enabled: false
+    enabled: true
     # Specify allowed headers, like 'x-allowed-header'.
-    allowedHeaders: []
+    allowedHeaders: ['x-csrf-token','authorization','content-type','accept','origin','x-requested-with', 'access-control-allow-origin','x-allowed-header','*']
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
-    allowedMethods: []
-    # Configure requests allowed from specific origins. Do not include trailing
-    # slashes with URLs.
-    allowedOrigins: ['*']
-    # Configure requests allowed from origins, matching against regex patterns.
-    allowedOriginsPatterns: []
+    allowedMethods: ['*']
+    Access-Control-Allow-Origin: ['*']
+    # Configure requests allowed from specific origins.
+    allowedOrigins: ['http://localhost/','http://localhost:5173','http://localhost:5173','http://localhost:5173','*']
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.
     maxAge: false
     # Sets the Access-Control-Allow-Credentials header.
-    supportsCredentials: false
+    supportsCredentials: true
+
 
   queue.config:
     # The maximum number of seconds to wait if a queue is temporarily suspended.
