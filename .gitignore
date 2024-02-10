@@ -143,6 +143,7 @@ $RECYCLE.BIN/
 # Ignore paths that may contain user-generated content
 /files-private
 /mount-files
+/tmp
 
 # Ignore drupal core (if not versioning drupal sources)
 /web/modules/contrib
