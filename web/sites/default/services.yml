@@ -221,7 +221,6 @@ parameters:
     # Sets the Access-Control-Allow-Credentials header.
     supportsCredentials: true
 
-
   queue.config:
     # The maximum number of seconds to wait if a queue is temporarily suspended.
     # This is not applicable when a queue is suspended but does not specify
