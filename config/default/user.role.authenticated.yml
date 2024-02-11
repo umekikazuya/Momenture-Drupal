@@ -7,7 +7,6 @@ dependencies:
   module:
     - file
     - filter
-    - search
     - system
     - toolbar
 _core:
@@ -23,7 +22,6 @@ permissions:
   - 'cancel account'
   - 'change own username'
   - 'delete own files'
-  - 'search content'
   - 'use text format basic_html'
   - 'view the administration theme'
   - 'view user email addresses'
