@@ -775,6 +775,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['trusted_host_patterns'] = [
   '^'.getenv('LANDO_APP_NAME').'\.dev\.lando$',      # lando proxy access
   '52.198.74.109:80',
+  '52.198.74.109',
 ];
 
 /**
@@ -880,24 +881,28 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
-}
-else {
-  switch (DRUPAL_ROOT) {
-    case '/var/www/html/web':
-      $databases['default']['default'] = array (
-        'database' => 'diary',
-        'username' => 'diary',
-        'password' => '4J%mFWWS8qn@^J',
-        'prefix' => '',
-        'host' => 'localhost',
-        'port' => '3306',
-        'isolation_level' => 'READ COMMITTED',
-        'driver' => 'mysql',
-        'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-        'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-      );
-      break;
-  }
+switch (DRUPAL_ROOT) {
+  // ec2.
+  case '/var/www/html/web':
+    $databases['default']['default'] = array (
+      'database' => 'diary',
+      'username' => 'diary',
+      'password' => '4J%mFWWS8qn@^J',
+      'prefix' => '',
+      'host' => 'localhost',
+      'port' => '3306',
+      'isolation_level' => 'READ COMMITTED',
+      'driver' => 'mysql',
+      'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+      'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+      'collation' => 'utf8mb4_general_ci',
+    );
+    break;
+
+  // Lando.
+  case '/app/web':
+    if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+      include $app_root . '/' . $site_path . '/settings.local.php';
+    }
+    break;
 }
