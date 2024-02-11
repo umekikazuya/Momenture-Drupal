@@ -20,7 +20,6 @@ dependencies:
     - locale
     - node
     - path
-    - search
     - system
     - taxonomy
     - toolbar
@@ -63,7 +62,6 @@ permissions:
   - 'administer node form display'
   - 'administer nodes'
   - 'administer permissions'
-  - 'administer search'
   - 'administer site configuration'
   - 'administer software updates'
   - 'administer taxonomy'
@@ -96,7 +94,6 @@ permissions:
   - 'select account cancellation method'
   - 'synchronize configuration'
   - 'translate interface'
-  - 'use advanced search'
   - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view all revisions'
