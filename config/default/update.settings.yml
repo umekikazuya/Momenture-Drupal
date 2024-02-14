@@ -3,7 +3,7 @@ _core:
 langcode: ja
 check:
   disabled_extensions: false
-  interval_days: 1
+  interval_days: 7
 fetch:
   url: null
   max_attempts: 2
