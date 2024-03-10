@@ -774,8 +774,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  */
 $settings['trusted_host_patterns'] = [
   '^'.getenv('LANDO_APP_NAME').'\.dev\.lando$',      # lando proxy access
-  '52.198.74.109:80',
-  '52.198.74.109',
+  'momenture.jp',
 ];
 
 /**
