@@ -1,0 +1,15 @@
+tool.user_account:
+  title: Account
+  parent_id: entity.user.edit_form
+  route_name: entity.user.edit_form
+  route_parameters:
+    display: default
+  weight: 0
+
+tool.user_profile:
+  title: Profile
+  parent_id: entity.user.edit_form
+  route_name: entity.user.edit_form
+  route_parameters:
+    display: profile
+  weight: 1

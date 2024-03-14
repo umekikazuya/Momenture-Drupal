@@ -3,10 +3,16 @@ langcode: ja
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_address
     - field.field.user.user.field_display_name
+    - field.field.user.user.field_display_short_name
+    - field.field.user.user.field_from
     - field.field.user.user.field_github
     - field.field.user.user.field_introduction
+    - field.field.user.user.field_job
+    - field.field.user.user.field_like
     - field.field.user.user.field_qiita
+    - field.field.user.user.field_skill
     - field.field.user.user.field_summary_introduction
     - field.field.user.user.field_zenn
   module:
@@ -19,64 +25,28 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   contact:
     weight: 5
     region: content
-  field_display_name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_github:
-    type: string_textfield
-    weight: 5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_introduction:
-    type: string_textarea
-    weight: 1
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_qiita:
-    type: string_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_summary_introduction:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_zenn:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
 hidden:
+  field_address: true
+  field_display_name: true
+  field_display_short_name: true
+  field_from: true
+  field_github: true
+  field_introduction: true
+  field_job: true
+  field_like: true
+  field_qiita: true
+  field_skill: true
+  field_summary_introduction: true
+  field_zenn: true
   langcode: true
   language: true

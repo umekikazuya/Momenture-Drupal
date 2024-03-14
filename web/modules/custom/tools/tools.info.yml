@@ -1,0 +1,5 @@
+name: 'Tools'
+type: module
+description: 'Provides tool.'
+package: Utility
+core_version_requirement: ^10 || ^11
