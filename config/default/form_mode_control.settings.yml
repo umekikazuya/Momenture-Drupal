@@ -1,0 +1,6 @@
+'use  The form mode profile linked to  user entity( user )': user.user.profile
+'use  The form mode default linked to  block_content entity( basic )': block_content.basic.default
+'use  The form mode default linked to  node entity( library )': node.library.default
+'use  The form mode default linked to  node entity( monologue )': node.monologue.default
+'use  The form mode default linked to  node entity( notebook )': node.notebook.default
+'use  The form mode default linked to  user entity( user )': user.user.default

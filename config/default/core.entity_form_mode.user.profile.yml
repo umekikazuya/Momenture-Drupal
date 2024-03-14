@@ -1,0 +1,11 @@
+uuid: fdbba74c-724f-4a6c-aa64-f18c54acb55e
+langcode: ja
+status: true
+dependencies:
+  module:
+    - user
+id: user.profile
+label: Profile
+description: ''
+targetEntityType: user
+cache: true
