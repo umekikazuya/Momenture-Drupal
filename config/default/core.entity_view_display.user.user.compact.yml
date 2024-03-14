@@ -4,10 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_address
     - field.field.user.user.field_display_name
+    - field.field.user.user.field_display_short_name
+    - field.field.user.user.field_from
     - field.field.user.user.field_github
     - field.field.user.user.field_introduction
+    - field.field.user.user.field_job
+    - field.field.user.user.field_like
     - field.field.user.user.field_qiita
+    - field.field.user.user.field_skill
     - field.field.user.user.field_summary_introduction
     - field.field.user.user.field_zenn
   module:
@@ -20,10 +26,16 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
+  field_address: true
   field_display_name: true
+  field_display_short_name: true
+  field_from: true
   field_github: true
   field_introduction: true
+  field_job: true
+  field_like: true
   field_qiita: true
+  field_skill: true
   field_summary_introduction: true
   field_zenn: true
   langcode: true

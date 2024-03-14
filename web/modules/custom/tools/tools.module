@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function tools_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  switch ($route_name) {
+    case 'entity.user.edit_form':
+      /** @var \Symfony\Component\HttpFoundation\Request $request */
+      $request = \Drupal::request();
+      $form_mode_label = $request->query->get('display');
+      if (($tabs = &$data['tabs'] ?? FALSE)
+        && ($secondary = &$tabs[1] ?? FALSE)
+      ) {
+        foreach ($secondary as &$task) {
+          if (isset($task['#link']['url'])
+            && ($url = $task['#link']['url'])
+            && $url instanceof Url
+          ) {
+            // Get route parameters from the URL object.
+            $parameters = $url->getRouteParameters();
+
+            // Check if 'display' parameter matches the 'display' query parameter.
+            if (isset($parameters['display']) && $parameters['display'] === $form_mode_label) {
+              // Set the task as active.
+              $task['#active'] = TRUE;
+            }
+          }
+        }
+      }
+      break;
+  }
+}

@@ -1,0 +1,21 @@
+uuid: 687a4ee0-a306-4ae1-940d-42624e9543b5
+langcode: ja
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_display_short_name
+field_name: field_display_short_name
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

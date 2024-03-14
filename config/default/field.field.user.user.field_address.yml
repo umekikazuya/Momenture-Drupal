@@ -1,16 +1,16 @@
-uuid: da749a33-0645-4e77-9ecc-cd6ba44c2aac
+uuid: 8153ad17-9775-4ed9-b52f-fb4887e85d99
 langcode: ja
 status: true
 dependencies:
   config:
-    - field.storage.user.field_display_name
+    - field.storage.user.field_address
   module:
     - user
-id: user.user.field_display_name
-field_name: field_display_name
+id: user.user.field_address
+field_name: field_address
 entity_type: user
 bundle: user
-label: 'Display Name'
+label: Address
 description: ''
 required: false
 translatable: false

@@ -1,16 +1,16 @@
-uuid: da749a33-0645-4e77-9ecc-cd6ba44c2aac
+uuid: b35bd005-c87d-4e88-90bb-d527c22ab2b7
 langcode: ja
 status: true
 dependencies:
   config:
-    - field.storage.user.field_display_name
+    - field.storage.user.field_job
   module:
     - user
-id: user.user.field_display_name
-field_name: field_display_name
+id: user.user.field_job
+field_name: field_job
 entity_type: user
 bundle: user
-label: 'Display Name'
+label: Job
 description: ''
 required: false
 translatable: false
