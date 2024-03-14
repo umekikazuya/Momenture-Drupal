@@ -7,6 +7,7 @@ dependencies:
   module:
     - file
     - filter
+    - form_mode_control
     - system
     - toolbar
 _core:
@@ -19,6 +20,7 @@ permissions:
   - 'access content'
   - 'access toolbar'
   - 'access user profiles'
+  - access_all_form_modes
   - 'cancel account'
   - 'change own username'
   - 'delete own files'
