@@ -1,0 +1,40 @@
+uuid: 8311341b-868a-472d-9a5a-5232d96b5bbd
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.project.project
+    - field.field.project.project.field_detail
+    - field.field.project.project.field_name
+  module:
+    - text
+    - user
+id: project.project.default
+targetEntityType: project
+bundle: project
+mode: default
+content:
+  field_detail:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  uid:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

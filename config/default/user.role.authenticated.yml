@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
+    - eck
     - file
     - filter
     - form_mode_control
@@ -23,7 +24,13 @@ permissions:
   - access_all_form_modes
   - 'cancel account'
   - 'change own username'
+  - 'create project entities'
+  - 'create task entities'
   - 'delete own files'
+  - 'delete own project entities'
+  - 'delete own task entities'
   - 'use text format basic_html'
+  - 'view own project entities'
+  - 'view own task entities'
   - 'view the administration theme'
   - 'view user email addresses'
