@@ -6,3 +6,4 @@
 'use  The form mode default linked to  user entity( user )': user.user.default
 'use  The form mode default linked to  task entity( task )': task.task.default
 'use  The form mode default linked to  project entity( project )': project.project.default
+'use  The form mode default linked to  status entity( status )': status.status.default

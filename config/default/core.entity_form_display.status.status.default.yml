@@ -1,0 +1,23 @@
+uuid: e0a91775-3302-4aff-9878-6087be923d25
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.status.status
+    - field.field.status.status.field_name
+id: status.status.default
+targetEntityType: status
+bundle: status
+mode: default
+content:
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  uid: true

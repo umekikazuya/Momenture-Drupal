@@ -1,0 +1,10 @@
+uuid: e807862d-b036-448f-bc32-625f6843c0e7
+langcode: ja
+status: false
+dependencies: {  }
+id: status
+label: Status
+uid: true
+created: false
+changed: false
+title: false
