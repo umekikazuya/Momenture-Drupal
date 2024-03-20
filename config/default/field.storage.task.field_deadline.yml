@@ -1,0 +1,20 @@
+uuid: cc9bf21d-13e5-40c6-87ba-6cb1106b5979
+langcode: ja
+status: true
+dependencies:
+  module:
+    - datetime
+    - eck
+id: task.field_deadline
+field_name: field_deadline
+entity_type: task
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

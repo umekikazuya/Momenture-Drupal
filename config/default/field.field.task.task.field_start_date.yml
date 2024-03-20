@@ -1,0 +1,21 @@
+uuid: e1e87254-cf2f-4c7a-bfe2-d94882c7b7ee
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.task.task
+    - field.storage.task.field_start_date
+  module:
+    - datetime
+id: task.task.field_start_date
+field_name: field_start_date
+entity_type: task
+bundle: task
+label: 開始日
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

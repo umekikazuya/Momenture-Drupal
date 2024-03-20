@@ -1,0 +1,21 @@
+uuid: ae86060b-d301-4278-ad40-f61f25d4e190
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.task.task
+    - field.storage.task.field_repeat
+id: task.task.field_repeat
+field_name: field_repeat
+entity_type: task
+bundle: task
+label: 繰り返し
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: オン
+  off_label: オフ
+field_type: boolean
