@@ -1,0 +1,19 @@
+uuid: 843d80f1-9ae5-4bd9-b57a-b040fb57823e
+langcode: ja
+status: true
+dependencies:
+  module:
+    - eck
+    - text
+id: task.field_detail
+field_name: field_detail
+entity_type: task
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
