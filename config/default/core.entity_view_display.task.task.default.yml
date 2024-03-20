@@ -7,6 +7,7 @@ dependencies:
     - field.field.task.task.field_deadline
     - field.field.task.task.field_detail
     - field.field.task.task.field_name
+    - field.field.task.task.field_ref_project
     - field.field.task.task.field_repeat
     - field.field.task.task.field_start_date
   module:
@@ -40,6 +41,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_ref_project:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_repeat:
     type: boolean

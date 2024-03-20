@@ -1,0 +1,29 @@
+uuid: 69cff09b-aa40-45b1-86ab-717058f136b7
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.project.project
+    - eck.eck_type.task.task
+    - field.storage.task.field_ref_project
+id: task.task.field_ref_project
+field_name: field_ref_project
+entity_type: task
+bundle: task
+label: Project
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:project'
+  handler_settings:
+    target_bundles:
+      project: project
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
