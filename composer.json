@@ -28,6 +28,7 @@
         "drupal/gin_login": "^2.0",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.24",
+        "drupal/page_manager": "^4.0@RC",
         "drush/drush": "^12.4"
     },
     "conflict": {
