@@ -15,7 +15,7 @@ third_party_settings:
     module_link: true
 preset_accent_color: dark_purple
 preset_focus_color: dark
-enable_darkmode: '0'
+enable_darkmode: '1'
 classic_toolbar: vertical
 secondary_toolbar_frontend: false
 high_contrast_mode: false

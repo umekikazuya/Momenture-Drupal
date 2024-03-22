@@ -160,6 +160,55 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.project.field_name'
+  list:
+    id: list
+    display_title: プロジェクトリスト
+    display_plugin: block
+    position: 2
+    display_options:
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            field_name: field_name
+          default: '-1'
+          info:
+            field_name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.roles
+      tags:
+        - 'config:field.storage.project.field_name'
   ref:
     id: ref
     display_title: エンティティ参照

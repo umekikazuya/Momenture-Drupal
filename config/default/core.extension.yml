@@ -12,6 +12,7 @@ module:
   ckeditor5: 0
   config: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dynamic_page_cache: 0
   eck: 0
@@ -37,6 +38,8 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  page_manager: 0
+  page_manager_ui: 0
   path: 0
   path_alias: 0
   serialization: 0
