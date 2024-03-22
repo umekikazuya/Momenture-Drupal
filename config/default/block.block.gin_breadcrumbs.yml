@@ -1,15 +1,15 @@
-uuid: 9583e66e-9f75-4f0e-ae7b-81e3f0d5409a
+uuid: 8e055ce9-60f6-44c4-b23c-4148b48d5320
 langcode: ja
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
+    - gin
 _core:
-  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
-id: olivero_breadcrumbs
-theme: olivero
+  default_config_hash: y9X3xgCsO59pQyzNLzY1D3SDJJxCHILLWkpPnmuTJ2E
+id: gin_breadcrumbs
+theme: gin
 region: breadcrumb
 weight: 0
 provider: null

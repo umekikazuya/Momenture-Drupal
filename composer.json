@@ -24,6 +24,8 @@
         "drupal/eck": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/form_mode_control": "^2.2",
+        "drupal/gin": "^3.0@rc",
+        "drupal/gin_toolbar": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.24",
         "drush/drush": "^12.4"
     },

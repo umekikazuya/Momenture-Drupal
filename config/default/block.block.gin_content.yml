@@ -1,15 +1,15 @@
-uuid: e6007aaa-9775-47ff-bf8b-4fd2142dd07f
+uuid: 892df942-90fe-4b28-bf51-b72a051efa17
 langcode: ja
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
+    - gin
 _core:
-  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
-id: olivero_content
-theme: olivero
+  default_config_hash: hBHXB7hC05XU7pDYzETt-GUcpFlogK1gkjyAsg0Ym58
+id: gin_content
+theme: gin
 region: content
 weight: 0
 provider: null
