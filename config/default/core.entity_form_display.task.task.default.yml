@@ -8,6 +8,7 @@ dependencies:
     - field.field.task.task.field_detail
     - field.field.task.task.field_name
     - field.field.task.task.field_ref_project
+    - field.field.task.task.field_ref_status
     - field.field.task.task.field_repeat
     - field.field.task.task.field_start_date
   module:
@@ -43,6 +44,12 @@ content:
   field_ref_project:
     type: options_select
     weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_status:
+    type: options_select
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
