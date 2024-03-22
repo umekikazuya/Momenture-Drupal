@@ -1,5 +1,5 @@
 uuid: 892df942-90fe-4b28-bf51-b72a051efa17
-langcode: en
+langcode: ja
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Main page content'
+  label: メインページコンテンツ
   label_display: '0'
   provider: system
 visibility: {  }

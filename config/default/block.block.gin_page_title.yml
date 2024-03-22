@@ -1,5 +1,5 @@
 uuid: 60f6a2b1-df2e-4a5e-be6a-4d6fdb2bc116
-langcode: en
+langcode: ja
 status: true
 dependencies:
   theme:
@@ -14,7 +14,7 @@ provider: null
 plugin: page_title_block
 settings:
   id: page_title_block
-  label: 'Page title'
+  label: ページのタイトル
   label_display: '0'
   provider: core
 visibility: {  }
