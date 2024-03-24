@@ -1,0 +1,12 @@
+uuid: 47b7475a-0c52-4ae6-bc54-e2c2f05d7bb9
+langcode: ja
+status: true
+dependencies: {  }
+id: app
+label: Dashboard
+description: ''
+use_admin_theme: false
+path: /app
+access_logic: and
+access_conditions: {  }
+parameters: {  }

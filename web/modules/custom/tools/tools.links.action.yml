@@ -1,0 +1,17 @@
+tool.add_task:
+  route_name: eck.entity.add
+  route_parameters:
+    eck_entity_type: task
+    eck_entity_bundle: task
+  title: 'Add Task'
+  appears_on:
+    - page_manager.page_view_app_app-layout_builder-0
+
+tool.add_project:
+  route_name: eck.entity.add
+  route_parameters:
+    eck_entity_type: project
+    eck_entity_bundle: project
+  title: 'Add Project'
+  appears_on:
+    - page_manager.page_view_project_project-layout_builder-0

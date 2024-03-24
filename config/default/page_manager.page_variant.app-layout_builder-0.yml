@@ -1,0 +1,44 @@
+uuid: f24aa036-4761-4f74-814a-9f39ff4205e4
+langcode: ja
+status: true
+dependencies:
+  config:
+    - page_manager.page.app
+    - views.view.task
+  module:
+    - layout_discovery
+    - views
+id: app-layout_builder-0
+label: Layout
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 5e711775-9c1a-44b0-9fa4-6343dcb000c5
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        0787e593-40b7-450d-85f7-c5c0dd2b4f7b:
+          uuid: 0787e593-40b7-450d-85f7-c5c0dd2b4f7b
+          region: content
+          configuration:
+            id: 'views_block:task-list'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: app
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

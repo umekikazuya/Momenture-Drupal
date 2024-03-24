@@ -16,11 +16,11 @@ third_party_settings:
 preset_accent_color: dark_purple
 preset_focus_color: dark
 enable_darkmode: '0'
-classic_toolbar: vertical
+classic_toolbar: horizontal
 secondary_toolbar_frontend: false
 high_contrast_mode: false
 accent_color: '#f2f2f2'
 focus_color: ''
-layout_density: small
+layout_density: medium
 show_description_toggle: true
 show_user_theme_settings: false

@@ -9,6 +9,7 @@ dependencies:
     - file
     - filter
     - form_mode_control
+    - node
     - system
     - toolbar
 _core:
@@ -19,6 +20,7 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access content overview'
   - 'access toolbar'
   - 'access user profiles'
   - access_all_form_modes
@@ -31,6 +33,9 @@ permissions:
   - 'delete own project entities'
   - 'delete own status entities'
   - 'delete own task entities'
+  - 'edit own project entities'
+  - 'edit own status entities'
+  - 'edit own task entities'
   - 'use text format basic_html'
   - 'view own project entities'
   - 'view own status entities'
