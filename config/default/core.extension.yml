@@ -30,6 +30,8 @@ module:
   jsonapi: 0
   jsonapi_extras: 0
   language: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   locale: 0
   menu_link_content: 0
@@ -50,6 +52,7 @@ module:
   tools: 0
   update: 0
   user: 0
+  verf: 0
   views_ui: 0
   views: 10
   standard: 1000

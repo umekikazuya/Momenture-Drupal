@@ -201,6 +201,8 @@ display:
         row: false
       display_description: ''
       display_extenders: {  }
+      allow:
+        items_per_page: false
     cache_metadata:
       max-age: -1
       contexts:
