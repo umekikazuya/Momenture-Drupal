@@ -7,8 +7,12 @@ dependencies:
     - field.storage.project.field_name
     - field.storage.status.field_name
     - field.storage.task.field_name
+    - user.role.administrator
+    - user.role.authenticated
+    - user.role.developer
   module:
     - eck
+    - user
 id: task
 label: 【Parts】Task
 module: views
@@ -102,8 +106,12 @@ display:
           sort_asc_label: 昇順
           sort_desc_label: 降順
       access:
-        type: none
-        options: {  }
+        type: role
+        options:
+          role:
+            authenticated: authenticated
+            developer: developer
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -152,6 +160,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user.roles
       tags:
         - 'config:field.storage.task.field_name'
   list:
@@ -541,11 +550,7 @@ display:
       style:
         type: table
         options:
-          grouping:
-            -
-              field: field_name_1
-              rendered: true
-              rendered_strip: false
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -633,6 +638,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.roles
       tags:
         - 'config:field.storage.project.field_name'
         - 'config:field.storage.status.field_name'

@@ -1,9 +1,15 @@
 name: Diary
 recipe: drupal10
+proxy:
+  appserver:
+    - diary.dev.lando
 config:
-  php: "8.1"
+  php: "8.2"
   via: apache:2.4
   webroot: web
+  drush: false
+  database: mysql:8.0
+  xdebug: false
 keys: true
 services:
   memcached:
@@ -22,7 +28,7 @@ services:
         USE_QUERY_LOG: 0
         XDEBUG_MODE:
     build_as_root:
-      - if [ -f /user/.lando.utils ]; then bash /user/.lando.utils build_as_root;
+      - if [ -f /user/.lando.utils ]; then bash /user/.lando.utils build_as_root; fi
   phpmyadmin:
     ssl: true
     type: phpmyadmin

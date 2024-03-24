@@ -1,0 +1,17 @@
+tool.flow_sync:
+  title: 'Flow Sync'
+  route_name: page_manager.page_view_app_app-layout_builder-0
+  parent: system.admin
+  weight: -20
+
+tool.flow_sync.app:
+  title: 'Dashboard'
+  route_name: page_manager.page_view_app_app-layout_builder-0
+  parent: tool.flow_sync
+  weight: -20
+
+tool.flow_sync.project:
+  title: 'Project'
+  route_name: page_manager.page_view_project_project-layout_builder-0
+  parent: tool.flow_sync
+  weight: -19

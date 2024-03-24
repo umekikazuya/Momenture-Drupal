@@ -1,14 +1,14 @@
-uuid: f24aa036-4761-4f74-814a-9f39ff4205e4
+uuid: c9ac8f8c-52f7-4e2b-80e9-0e74649df7f1
 langcode: ja
 status: true
 dependencies:
   config:
-    - page_manager.page.app
-    - views.view.task
+    - page_manager.page.project
+    - views.view.project
   module:
     - layout_discovery
     - views
-id: app-layout_builder-0
+id: project-layout_builder-0
 label: Layout
 weight: 0
 variant: layout_builder
@@ -16,7 +16,7 @@ variant_settings:
   id: layout_builder
   label: null
   weight: 0
-  uuid: 5e711775-9c1a-44b0-9fa4-6343dcb000c5
+  uuid: 58369705-80ed-4c84-bffd-b85ed992631a
   sections:
     -
       layout_id: layout_onecol
@@ -24,11 +24,11 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
-        0787e593-40b7-450d-85f7-c5c0dd2b4f7b:
-          uuid: 0787e593-40b7-450d-85f7-c5c0dd2b4f7b
+        d62f4d80-25b6-4bdb-b06d-ad8ec989f096:
+          uuid: d62f4d80-25b6-4bdb-b06d-ad8ec989f096
           region: content
           configuration:
-            id: 'views_block:task-list'
+            id: 'views_block:project-list'
             label: ''
             label_display: '0'
             provider: views
@@ -38,7 +38,7 @@ variant_settings:
           weight: 0
           additional: {  }
       third_party_settings: {  }
-page: app
+page: project
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }

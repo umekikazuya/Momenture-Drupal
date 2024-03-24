@@ -1,12 +1,12 @@
-uuid: 47b7475a-0c52-4ae6-bc54-e2c2f05d7bb9
+uuid: 0d5943e6-222c-4ba4-a4ea-fd6a769e0301
 langcode: ja
 status: true
 dependencies: {  }
-id: app
-label: Dashboard
+id: project
+label: 'Project'
 description: ''
 use_admin_theme: false
-path: /app
+path: /project
 access_logic: and
 access_conditions: {  }
 parameters: {  }
