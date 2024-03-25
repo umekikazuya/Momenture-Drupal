@@ -1,0 +1,71 @@
+uuid: e3ad718b-94ad-4682-ac58-d3124a03b703
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.task.task
+    - field.field.task.task.field_deadline
+    - field.field.task.task.field_detail
+    - field.field.task.task.field_name
+    - field.field.task.task.field_ref_project
+    - field.field.task.task.field_ref_status
+    - field.field.task.task.field_repeat
+    - field.field.task.task.field_start_date
+  module:
+    - datetime
+    - text
+id: task.task.default
+targetEntityType: task
+bundle: task
+mode: default
+content:
+  field_deadline:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_detail:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_project:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_status:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_repeat:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_start_date:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  uid: true

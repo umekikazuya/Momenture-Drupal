@@ -1,0 +1,19 @@
+uuid: 22d5b0aa-f544-4af8-8d49-5b0730d34ab3
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.task.task
+    - field.storage.task.field_name
+id: task.task.field_name
+field_name: field_name
+entity_type: task
+bundle: task
+label: タスク名
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

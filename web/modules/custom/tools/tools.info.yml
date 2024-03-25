@@ -1,5 +1,5 @@
 name: 'Tools'
 type: module
-description: 'Provides tool.'
+description: 'Provides tools.'
 package: Utility
 core_version_requirement: ^10 || ^11

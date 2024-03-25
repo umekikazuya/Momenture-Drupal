@@ -8,6 +8,17 @@ use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Url;
 
 /**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function tools_menu_links_discovered_alter(&$links) {
+  $current_user_id = \Drupal::currentUser()->id();
+
+  if (isset($links['tool.profile'])) {
+    $links['tool.profile']['route_parameters']['user'] = $current_user_id;
+  }
+}
+
+/**
  * Implements hook_menu_local_tasks_alter().
  */
 function tools_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
