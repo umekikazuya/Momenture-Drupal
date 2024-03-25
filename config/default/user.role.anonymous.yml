@@ -13,4 +13,5 @@ label: 匿名ユーザー
 weight: -10
 is_admin: false
 permissions:
+  - 'access user profiles'
   - 'use text format restricted_html'
