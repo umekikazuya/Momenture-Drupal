@@ -1,0 +1,6 @@
+services:
+  tools.manager:
+    class: "\\Drupal\\tools\\ToolsManager"
+    arguments:
+      - "@menu.link_tree"
+      - "@menu.active_trail"
