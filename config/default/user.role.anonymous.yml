@@ -6,7 +6,6 @@ dependencies:
     - filter.format.restricted_html
   module:
     - filter
-    - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
@@ -14,6 +13,4 @@ label: 匿名ユーザー
 weight: -10
 is_admin: false
 permissions:
-  - 'access content'
-  - 'access user profiles'
   - 'use text format restricted_html'
