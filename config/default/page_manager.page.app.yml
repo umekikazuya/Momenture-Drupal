@@ -3,10 +3,10 @@ langcode: ja
 status: true
 dependencies: {  }
 id: app
-label: Dashboard
+label: App
 description: ''
 use_admin_theme: false
-path: /app
+path: /app/flowsync
 access_logic: and
 access_conditions: {  }
 parameters: {  }

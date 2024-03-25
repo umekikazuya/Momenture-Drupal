@@ -3,7 +3,7 @@ langcode: ja
 status: true
 dependencies: {  }
 id: project
-label: 'Project'
+label: Project
 description: ''
 use_admin_theme: false
 path: /project

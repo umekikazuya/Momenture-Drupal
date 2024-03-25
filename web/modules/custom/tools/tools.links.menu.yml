@@ -1,17 +1,25 @@
-tool.flow_sync:
-  title: 'Flow Sync'
-  route_name: page_manager.page_view_app_app-layout_builder-0
-  parent: system.admin
+tool.app:
+  title: 'App'
+  route_name: tools.app
+  menu_name: tools
   weight: -20
 
-tool.flow_sync.app:
-  title: 'Dashboard'
+tool.flow_sync:
+  title: 'FlowSync'
   route_name: page_manager.page_view_app_app-layout_builder-0
-  parent: tool.flow_sync
+  parent: tool.app
   weight: -20
 
 tool.flow_sync.project:
   title: 'Project'
   route_name: page_manager.page_view_project_project-layout_builder-0
   parent: tool.flow_sync
+  weight: -19
+
+tool.profile:
+  title: 'Profile'
+  parent: tool.app
+  route_name: entity.user.edit_form
+  route_parameters:
+    display: default
   weight: -19

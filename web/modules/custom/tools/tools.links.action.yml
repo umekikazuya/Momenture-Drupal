@@ -1,4 +1,4 @@
-tool.add_task:
+tools.add_task:
   route_name: eck.entity.add
   route_parameters:
     eck_entity_type: task
@@ -7,7 +7,7 @@ tool.add_task:
   appears_on:
     - page_manager.page_view_app_app-layout_builder-0
 
-tool.add_project:
+tools.add_project:
   route_name: eck.entity.add
   route_parameters:
     eck_entity_type: project

@@ -1,0 +1,7 @@
+tools.app:
+  path: '/app'
+  defaults:
+    _controller: "\\Drupal\\tools\\Controller\\ToolsController::build"
+    _title: 'Dashboard'
+  requirements:
+    _role: 'authenticated'
