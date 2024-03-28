@@ -16,7 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "cweagans/composer-patches": "^1.7",
+        "cweagans/composer-patches": "~1.0",
         "drupal/admin_toolbar": "^3.4",
         "drupal/core-composer-scaffold": "10.2.4",
         "drupal/core-project-message": "10.2.4",
@@ -30,6 +30,7 @@
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.24",
         "drupal/page_manager": "^4.0@RC",
+        "drupal/rabbit_hole": "^2.0@alpha",
         "drupal/verf": "^2.0",
         "drush/drush": "^12.4"
     },
@@ -51,11 +52,13 @@
         "sort-packages": true
     },
     "extra": {
+        "composer-exit-on-patch-failure": true,
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
             }
         },
+        "enable-patching": true,
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -106,6 +109,13 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": true
+        "patches": {
+            "drupal/verf": {
+                "Support for entity types created with ECK.": "patches/drupal/verf/support-eck.patch"
+            }
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
+        }
     }
 }

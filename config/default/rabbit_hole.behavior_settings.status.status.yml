@@ -1,0 +1,13 @@
+uuid: f690a538-84c1-4ac7-83ec-d97ac1d81aac
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.status.status
+id: status.status
+targetEntityType: status
+bundle: status
+action: access_denied
+no_bypass: true
+bypass_message: false
+configuration: {  }

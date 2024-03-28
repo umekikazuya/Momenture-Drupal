@@ -1,0 +1,46 @@
+--- src/Plugin/views/filter/EntityReference.php	2024-01-29 19:03:07
++++ src/Plugin/views/filter/EntityReference.php.org	2024-03-28 17:33:03
+@@ -4,7 +4,6 @@
+ 
+ use Drupal\Core\Cache\Cache;
+ use Drupal\Core\Cache\CacheableMetadata;
+-use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\Entity\EntityStorageInterface;
+ use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
+ use Drupal\Core\Entity\EntityTypeInterface;
+@@ -15,6 +14,7 @@
+ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ use Drupal\Core\TypedData\TranslatableInterface;
++use Drupal\eck\EckEntityInterface;
+ use Drupal\views\Plugin\views\filter\InOperator;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+@@ -25,8 +25,7 @@
+  *
+  * @ViewsFilter("verf")
+  */
+-class EntityReference extends InOperator implements ContainerFactoryPluginInterface
+-{
++class EntityReference extends InOperator implements ContainerFactoryPluginInterface {
+ 
+   /**
+    * The entity type bundle info.
+@@ -192,7 +191,16 @@
+         $this->valueOptions[$entity->id()] = new TranslatableMarkup('- Restricted access -');
+         continue;
+       }
+-      $this->valueOptions[$entity->id()] = $entity->label();
++      $label = $entity->label();
++
++      // Titleフィールドがない場合.
++      if (!$label
++        && $entity instanceof EckEntityInterface
++        && $entity->hasField('field_name')
++      ) {
++        $label = $entity->get('field_name')->value;
++      }
++      $this->valueOptions[$entity->id()] = $label;
+     }
+     natcasesort($this->valueOptions);
+ 

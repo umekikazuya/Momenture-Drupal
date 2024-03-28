@@ -1,0 +1,13 @@
+uuid: 353d6424-68a9-4040-8295-83841db45a8d
+langcode: ja
+status: true
+dependencies:
+  module:
+    - user
+id: user.user
+targetEntityType: user
+bundle: user
+action: access_denied
+no_bypass: true
+bypass_message: false
+configuration: {  }
