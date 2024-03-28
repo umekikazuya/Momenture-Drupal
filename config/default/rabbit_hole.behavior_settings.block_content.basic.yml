@@ -1,0 +1,13 @@
+uuid: b2c0196d-d019-4c68-8350-c25b5bf590ae
+langcode: ja
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+id: block_content.basic
+targetEntityType: block_content
+bundle: basic
+action: access_denied
+no_bypass: true
+bypass_message: false
+configuration: {  }

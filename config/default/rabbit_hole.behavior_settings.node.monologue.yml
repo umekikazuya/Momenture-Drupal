@@ -1,0 +1,13 @@
+uuid: 6e940edd-0790-4c7a-9380-4b8ccd5afa8d
+langcode: ja
+status: true
+dependencies:
+  config:
+    - node.type.monologue
+id: node.monologue
+targetEntityType: node
+bundle: monologue
+action: access_denied
+no_bypass: true
+bypass_message: false
+configuration: {  }
