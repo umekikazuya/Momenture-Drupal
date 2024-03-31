@@ -19,9 +19,11 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access site reports'
   - 'access toolbar'
   - 'access user profiles'
   - access_all_form_modes
+  - 'administer users'
   - 'cancel account'
   - 'change own username'
   - 'create project entities'
