@@ -4,3 +4,7 @@ services:
     arguments:
       - "@menu.link_tree"
       - "@menu.active_trail"
+  tools.route_subscriber:
+    class: "\\Drupal\\tools\\Routing\\RouteSubscriber"
+    tags:
+      - { name: "event_subscriber" }

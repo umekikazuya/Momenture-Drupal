@@ -1,0 +1,5 @@
+name: 'Not found'
+type: module
+description: 'Provides functionality on NotFound page.'
+package: Custom
+core_version_requirement: ^10 || ^11

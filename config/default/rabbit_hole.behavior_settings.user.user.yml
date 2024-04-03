@@ -10,4 +10,7 @@ bundle: user
 action: access_denied
 no_bypass: true
 bypass_message: false
-configuration: {  }
+configuration:
+  redirect: '<front>'
+  redirect_code: 301
+  redirect_fallback_action: access_denied
