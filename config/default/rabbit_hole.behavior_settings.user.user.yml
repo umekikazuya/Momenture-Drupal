@@ -7,7 +7,7 @@ dependencies:
 id: user.user
 targetEntityType: user
 bundle: user
-action: page_redirect
+action: access_denied
 no_bypass: true
 bypass_message: false
 configuration:
