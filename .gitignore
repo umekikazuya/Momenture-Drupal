@@ -154,6 +154,7 @@ $RECYCLE.BIN/
 
 ### <CUSTOM_IGNORE_SET> ###
 /.achilles/
+.vscode/*
 ### </CUSTOM_IGNORE_SET> ###
 
 # <LANDO>

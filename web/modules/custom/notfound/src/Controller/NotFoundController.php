@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 final class NotFoundController extends ControllerBase {
 
-
   /**
    * The current request.
    */
