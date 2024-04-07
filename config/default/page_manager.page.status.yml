@@ -5,7 +5,7 @@ dependencies:
   module:
     - user
 id: status
-label: Flowsync
+label: FlowSync
 description: ''
 use_admin_theme: false
 path: /flowsync/status
