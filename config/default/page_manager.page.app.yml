@@ -5,10 +5,10 @@ dependencies:
   module:
     - user
 id: app
-label: App
+label: FlowSync
 description: ''
 use_admin_theme: false
-path: /app/flowsync
+path: /flowsync
 access_logic: and
 access_conditions:
   -

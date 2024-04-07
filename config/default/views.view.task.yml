@@ -368,7 +368,7 @@ display:
           admin_label: ''
           entity_type: task
           plugin_id: entity_operations
-          label: 管理リンク
+          label: Manage
           exclude: false
           alter:
             alter_text: false
@@ -422,7 +422,7 @@ display:
             previous: ‹‹
           expose:
             items_per_page: true
-            items_per_page_label: ページ毎の件数
+            items_per_page_label: 表示件数
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- 全て -'

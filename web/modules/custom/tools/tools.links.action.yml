@@ -15,3 +15,12 @@ tools.add_project:
   title: 'Add Project'
   appears_on:
     - page_manager.page_view_project_project-layout_builder-0
+
+tools.add_status:
+  route_name: eck.entity.add
+  route_parameters:
+    eck_entity_type: status
+    eck_entity_bundle: status
+  title: 'Add Status'
+  appears_on:
+    - page_manager.page_view_status_status-layout_builder-0
