@@ -5,7 +5,7 @@ dependencies:
   module:
     - user
 id: project
-label: Project
+label: Flowsync
 description: ''
 use_admin_theme: false
 path: /flowsync/project
