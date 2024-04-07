@@ -1,7 +1,15 @@
 tools.app:
   path: '/app'
   defaults:
-    _controller: "\\Drupal\\tools\\Controller\\ToolsController::build"
-    _title: 'Dashboard'
+    _controller: "\\Drupal\\tools\\Controller\\ToolsController::index"
+    _title: 'Momenture'
+  requirements:
+    _role: 'authenticated'
+
+tools.profile:
+  path: '/app/profile'
+  defaults:
+    _controller: "\\Drupal\\tools\\Controller\\ToolsController::profileSettings"
+    _title: 'Prorile'
   requirements:
     _role: 'authenticated'
