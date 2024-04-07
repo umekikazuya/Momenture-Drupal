@@ -1,12 +1,23 @@
 uuid: 0d5943e6-222c-4ba4-a4ea-fd6a769e0301
 langcode: ja
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - user
 id: project
-label: FlowSync
+label: Flowsync
 description: ''
 use_admin_theme: false
 path: /flowsync/project
 access_logic: and
-access_conditions: {  }
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      developer: developer
+      administrator: administrator
 parameters: {  }
