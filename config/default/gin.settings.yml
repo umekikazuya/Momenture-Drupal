@@ -9,7 +9,8 @@ features:
   favicon: false
   node_user_picture: true
 logo:
-  use_default: true
+  path: modules/custom/tools/assets/image/icon.svg
+  use_default: false
 third_party_settings:
   shortcut:
     module_link: true

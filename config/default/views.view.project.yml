@@ -149,6 +149,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      show_admin_links: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -175,7 +176,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: ''
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -239,7 +240,7 @@ display:
           admin_label: ''
           entity_type: project
           plugin_id: entity_operations
-          label: 管理リンク
+          label: Manage
           exclude: false
           alter:
             alter_text: false
