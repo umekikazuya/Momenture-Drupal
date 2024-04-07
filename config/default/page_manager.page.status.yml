@@ -1,12 +1,23 @@
 uuid: ce4387d5-e0a7-4bc0-bcfc-a5d0d8b082e7
 langcode: ja
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - user
 id: status
-label: FlowSync
+label: Status
 description: ''
 use_admin_theme: false
 path: /flowsync/status
 access_logic: and
-access_conditions: {  }
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      developer: developer
+      administrator: administrator
 parameters: {  }
