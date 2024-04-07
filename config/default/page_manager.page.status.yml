@@ -1,12 +1,12 @@
-uuid: 0d5943e6-222c-4ba4-a4ea-fd6a769e0301
+uuid: ce4387d5-e0a7-4bc0-bcfc-a5d0d8b082e7
 langcode: ja
 status: true
 dependencies: {  }
-id: project
+id: status
 label: FlowSync
 description: ''
 use_admin_theme: false
-path: /flowsync/project
+path: /flowsync/status
 access_logic: and
 access_conditions: {  }
 parameters: {  }

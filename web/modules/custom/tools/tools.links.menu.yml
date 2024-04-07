@@ -19,7 +19,5 @@ tool.flow_sync.project:
 tool.profile:
   title: 'Profile'
   parent: tool.app
-  route_name: entity.user.edit_form
-  route_parameters:
-    display: default
+  route_name: tools.profile
   weight: -19

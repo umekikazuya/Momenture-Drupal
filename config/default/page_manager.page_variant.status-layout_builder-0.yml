@@ -1,0 +1,44 @@
+uuid: 9880cac7-faa0-40de-b515-6f59c4f4f853
+langcode: ja
+status: true
+dependencies:
+  config:
+    - page_manager.page.status
+    - views.view.status
+  module:
+    - layout_discovery
+    - views
+id: status-layout_builder-0
+label: Layout
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: c748c01f-141d-48b2-b480-d4e08eaa5e5a
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        28d23046-237c-4aae-8604-faef139003a8:
+          uuid: 28d23046-237c-4aae-8604-faef139003a8
+          region: content
+          configuration:
+            id: 'views_block:status-list'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: status
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

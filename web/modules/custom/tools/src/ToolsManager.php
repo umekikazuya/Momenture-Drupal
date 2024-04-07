@@ -41,7 +41,7 @@ class ToolsManager {
   /**
    * Build dashboard.
    */
-  public function buildDashboard() {
+  public function buildIndex() {
     $link = $this->menuActiveTrail->getActiveLink('tools');
     if ($link && $content = $this->getAdminBlock($link)) {
       $build = [
