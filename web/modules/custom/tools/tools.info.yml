@@ -3,3 +3,5 @@ type: module
 description: 'Provides tools.'
 package: Utility
 core_version_requirement: ^10 || ^11
+"interface translation project": "tools"
+"interface translation server pattern": "modules/custom/tools/transrations/%project-1.0-%language.po"
