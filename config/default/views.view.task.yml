@@ -13,6 +13,7 @@ dependencies:
   module:
     - eck
     - user
+    - verf
 id: task
 label: 【Parts】Task
 module: views
@@ -449,27 +450,24 @@ display:
           value:
             task: task
           group: 1
-        field_ref_project_target_id:
-          id: field_ref_project_target_id
+        field_ref_project_target_id_verf:
+          id: field_ref_project_target_id_verf
           table: task__field_ref_project
-          field: field_ref_project_target_id
+          field: field_ref_project_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
+          plugin_id: verf
+          operator: in
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_ref_project_target_id_op
-            label: 'Project (field_ref_project)'
+            operator_id: field_ref_project_target_id_verf_op
+            label: Project
             description: ''
             use_operator: false
-            operator: field_ref_project_target_id_op
+            operator: field_ref_project_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: project
@@ -481,9 +479,7 @@ display:
               anonymous: '0'
               developer: '0'
               administrator: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
+            reduce: 0
           is_grouped: false
           group_info:
             label: ''
@@ -496,27 +492,27 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_ref_status_target_id:
-          id: field_ref_status_target_id
+          verf_target_bundles:
+            project: project
+          show_unpublished: 0
+        field_ref_status_target_id_verf:
+          id: field_ref_status_target_id_verf
           table: task__field_ref_status
-          field: field_ref_status_target_id
+          field: field_ref_status_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
+          plugin_id: verf
+          operator: in
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_ref_status_target_id_op
-            label: 'Status (field_ref_status)'
+            operator_id: field_ref_status_target_id_verf_op
+            label: Status
             description: ''
             use_operator: false
-            operator: field_ref_status_target_id_op
+            operator: field_ref_status_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: status
@@ -528,9 +524,7 @@ display:
               anonymous: '0'
               developer: '0'
               administrator: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
+            reduce: 0
           is_grouped: false
           group_info:
             label: ''
@@ -543,6 +537,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          verf_target_bundles:
+            status: status
+          show_unpublished: 0
       filter_groups:
         operator: AND
         groups:
@@ -643,3 +640,6 @@ display:
         - 'config:field.storage.project.field_name'
         - 'config:field.storage.status.field_name'
         - 'config:field.storage.task.field_name'
+        - 'config:views.view.task'
+        - project_list
+        - status_list
