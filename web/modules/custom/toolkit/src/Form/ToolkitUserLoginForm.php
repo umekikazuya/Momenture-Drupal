@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tools\Form;
+namespace Drupal\toolkit\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Form\UserLoginForm;
@@ -8,7 +8,7 @@ use Drupal\user\Form\UserLoginForm;
 /**
  * Override login form.
  */
-final class ToolsUserLoginForm extends UserLoginForm {
+final class ToolkitUserLoginForm extends UserLoginForm {
 
   /**
    * {@inheritdoc}

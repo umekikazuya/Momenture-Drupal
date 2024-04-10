@@ -1,0 +1,8 @@
+uuid: fae0c41c-6f50-4e2b-8861-b5bcc8b758db
+langcode: ja
+status: true
+dependencies: {  }
+id: toolkit
+label: Toolkit
+description: ''
+locked: false

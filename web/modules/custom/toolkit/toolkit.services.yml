@@ -1,0 +1,10 @@
+services:
+  toolkit.manager:
+    class: "\\Drupal\\toolkit\\ToolkitManager"
+    arguments:
+      - "@menu.link_tree"
+      - "@menu.active_trail"
+  toolkit.route_subscriber:
+    class: "\\Drupal\\toolkit\\Routing\\RouteSubscriber"
+    tags:
+      - { name: "event_subscriber" }

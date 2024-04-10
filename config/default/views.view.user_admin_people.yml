@@ -134,7 +134,7 @@ display:
           entity_type: user
           entity_field: status
           plugin_id: field
-          label: 状態
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -600,7 +600,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: 状態
+            label: Status
             description: ''
             identifier: status
             optional: true
