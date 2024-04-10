@@ -1,23 +1,23 @@
-tool.app:
+toolkit:
   title: 'App'
-  route_name: tools.app
-  menu_name: tools
+  route_name: toolkit.app
+  menu_name: toolkit
   weight: -20
 
-tool.flow_sync:
+toolkit.flow_sync:
   title: 'FlowSync'
   route_name: page_manager.page_view_app_app-layout_builder-0
-  parent: tool.app
+  parent: toolkit
   weight: -20
 
-tool.flow_sync.project:
+toolkit.flow_sync.project:
   title: 'Project'
   route_name: page_manager.page_view_project_project-layout_builder-0
-  parent: tool.flow_sync
+  parent: toolkit.flow_sync
   weight: -19
 
-tool.profile:
+toolkit.profile:
   title: 'Profile'
-  parent: tool.app
-  route_name: tools.profile
+  route_name: toolkit.profile
+  parent: toolkit
   weight: -19

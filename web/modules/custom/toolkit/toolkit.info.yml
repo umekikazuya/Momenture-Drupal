@@ -1,0 +1,7 @@
+name: 'Toolkit'
+type: module
+description: 'Provides Toolkit.'
+package: Utility
+core_version_requirement: ^10 || ^11
+"interface translation project": "toolkit"
+"interface translation server pattern": "modules/custom/toolkit/transrations/%project-1.0-%language.po"
