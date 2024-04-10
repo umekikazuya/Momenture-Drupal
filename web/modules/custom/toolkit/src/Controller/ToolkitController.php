@@ -1,29 +1,29 @@
 <?php
 
-namespace Drupal\tools\Controller;
+namespace Drupal\toolkit\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\tools\ToolsManager;
+use Drupal\toolkit\ToolkitManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Tools controller.
+ * Toolkit controller.
  */
-class ToolsController extends ControllerBase {
+class ToolkitController extends ControllerBase {
 
   /**
    * Tools Manager.
    */
-  protected ToolsManager $toolsManager;
+  protected ToolkitManager $toolkitManager;
 
   /**
    * Constructs a new Controller.
    *
-   * @param \Drupal\tools\ToolsManager $tools_manager
+   * @param \Drupal\toolkit\ToolsManager $toolkit_manager
    *   Tools manager service.
    */
-  public function __construct(ToolsManager $tools_manager) {
-    $this->toolsManager = $tools_manager;
+  public function __construct(ToolkitManager $toolkit_manager) {
+    $this->toolkitManager = $toolkit_manager;
   }
 
   /**
@@ -31,7 +31,7 @@ class ToolsController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('tools.manager'),
+      $container->get('toolkit.manager'),
     );
   }
 
@@ -39,7 +39,7 @@ class ToolsController extends ControllerBase {
    * Builds the response.
    */
   public function index() {
-    return $this->toolsManager->buildIndex();
+    return $this->toolkitManager->buildIndex();
   }
 
   /**

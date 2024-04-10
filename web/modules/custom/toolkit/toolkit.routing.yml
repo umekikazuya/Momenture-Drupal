@@ -1,15 +1,15 @@
-tools.app:
+toolkit.app:
   path: '/app'
   defaults:
-    _controller: "\\Drupal\\tools\\Controller\\ToolsController::index"
+    _controller: "\\Drupal\\toolkit\\Controller\\ToolkitController::index"
     _title: 'Momenture'
   requirements:
     _role: 'authenticated'
 
-tools.profile:
+toolkit.profile:
   path: '/app/profile'
   defaults:
-    _controller: "\\Drupal\\tools\\Controller\\ToolsController::profileSettings"
+    _controller: "\\Drupal\\toolkit\\Controller\\ToolkitController::profileSettings"
     _title: 'Prorile'
   requirements:
     _role: 'authenticated'

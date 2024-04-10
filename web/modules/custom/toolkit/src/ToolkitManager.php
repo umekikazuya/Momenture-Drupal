@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tools;
+namespace Drupal\toolkit;
 
 use Drupal\Core\Menu\MenuActiveTrailInterface;
 use Drupal\Core\Menu\MenuLinkInterface;
@@ -8,9 +8,9 @@ use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
 
 /**
- * Tools Manager.
+ * Toolkit Manager.
  */
-class ToolsManager {
+class ToolkitManager {
 
   /**
    * The active menu trail service.
@@ -42,7 +42,7 @@ class ToolsManager {
    * Build dashboard.
    */
   public function buildIndex() {
-    $link = $this->menuActiveTrail->getActiveLink('tools');
+    $link = $this->menuActiveTrail->getActiveLink('toolkit');
     if ($link && $content = $this->getAdminBlock($link)) {
       $build = [
         '#theme' => 'admin_block_content',

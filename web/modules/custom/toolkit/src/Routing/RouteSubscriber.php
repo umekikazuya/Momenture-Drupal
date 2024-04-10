@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tools\Routing;
+namespace Drupal\toolkit\Routing;
 
 use Drupal\Core\Routing\RouteSubscriberBase;
 use Symfony\Component\Routing\RouteCollection;
@@ -15,7 +15,7 @@ class RouteSubscriber extends RouteSubscriberBase {
    */
   protected function alterRoutes(RouteCollection $collection) {
     if ($route = $collection->get('user.login')) {
-      $route->setDefault('_form', '\\Drupal\\tools\\Form\\ToolsUserLoginForm');
+      $route->setDefault('_form', '\\Drupal\\toolkit\\Form\\ToolkitUserLoginForm');
     }
   }
 
