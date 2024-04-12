@@ -3,7 +3,6 @@ langcode: ja
 status: true
 dependencies:
   config:
-    - block_content.type.basic
     - filter.format.full_html
     - filter.format.restricted_html
   module:
@@ -21,7 +20,6 @@ dependencies:
     - node
     - path
     - system
-    - taxonomy
     - toolbar
     - update
     - views_ui
@@ -37,7 +35,6 @@ permissions:
   - 'access files overview'
   - 'access site in maintenance mode'
   - 'access site reports'
-  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'administer account settings'
@@ -64,10 +61,6 @@ permissions:
   - 'administer permissions'
   - 'administer site configuration'
   - 'administer software updates'
-  - 'administer taxonomy'
-  - 'administer taxonomy_term display'
-  - 'administer taxonomy_term fields'
-  - 'administer taxonomy_term form display'
   - 'administer themes'
   - 'administer url aliases'
   - 'administer user display'
@@ -79,25 +72,19 @@ permissions:
   - 'bypass node access'
   - 'cancel account'
   - 'change own username'
-  - 'create basic block content'
   - 'create url aliases'
   - 'delete all revisions'
-  - 'delete any basic block content'
-  - 'delete any basic block content revisions'
   - 'delete any file'
-  - 'edit any basic block content'
   - 'export configuration'
   - 'import configuration'
   - 'link to any page'
   - 'revert all revisions'
-  - 'revert any basic block content revisions'
   - 'select account cancellation method'
   - 'synchronize configuration'
   - 'translate interface'
   - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view all revisions'
-  - 'view any basic block content history'
   - 'view own unpublished content'
   - 'view the administration theme'
   - 'view unpublished eck entities'

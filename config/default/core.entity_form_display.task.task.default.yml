@@ -42,7 +42,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_ref_project:
-    type: options_select
+    type: options_buttons
     weight: 1
     region: content
     settings: {  }
