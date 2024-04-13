@@ -1,0 +1,23 @@
+uuid: 122825f9-0e55-4e36-a061-f35185a0aaac
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.task.repeat
+    - field.storage.task.field_is_enabled
+id: task.repeat.field_is_enabled
+field_name: field_is_enabled
+entity_type: task
+bundle: repeat
+label: 状態
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: オン
+  off_label: オフ
+field_type: boolean
