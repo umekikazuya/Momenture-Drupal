@@ -7,25 +7,13 @@ proxy:
     - diary.phpmyadmin.dev.lando
 config:
   php: "8.3"
+  composer_version: '2.2.12'
   via: apache:2.4
+  database: mysql
   webroot: web
-keys: true
 services:
   appserver:
     ssl: true
-    config:
-      php: .vscode/php.ini
-    overrides:
-      environment:
-        USE_ACLI: 0
-        USE_PUSH_DB: 0
-        USE_QUERY_LOG: 0
-        XDEBUG_MODE:
-  memcached:
-    type: memcached:1
-    app_mount: false
-    portforward: true
-    mem: 64
   phpmyadmin:
     ssl: true
     type: phpmyadmin
