@@ -17,3 +17,10 @@ msgstr ""
 
 msgid "Status"
 msgstr ""
+
+msgid "- Any -"
+msgstr "-"
+
+# eck
+msgid "Add %label content"
+msgstr "%label"
