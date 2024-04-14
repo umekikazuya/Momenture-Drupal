@@ -1,0 +1,9 @@
+uuid: 06e455a0-e653-45a0-8eef-c32dfcf57e57
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.task
+name: 繰り返しタスク
+type: repeat
+description: ''
