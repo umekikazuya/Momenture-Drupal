@@ -1,0 +1,19 @@
+uuid: f4e1ca6b-1f09-401e-875c-f01285feddce
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.task.repeat
+    - field.storage.task.field_name
+id: task.repeat.field_name
+field_name: field_name
+entity_type: task
+bundle: repeat
+label: タスク名
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
