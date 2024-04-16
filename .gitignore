@@ -153,6 +153,7 @@ $RECYCLE.BIN/
 ### </CUSTOM_BASE_IGNORE_SET> ###
 
 ### <CUSTOM_IGNORE_SET> ###
+.env
 /.achilles/
 .vscode/*
 ### </CUSTOM_IGNORE_SET> ###

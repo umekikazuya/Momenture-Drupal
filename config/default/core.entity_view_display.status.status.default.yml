@@ -4,12 +4,23 @@ status: true
 dependencies:
   config:
     - eck.eck_type.status.status
+    - field.field.status.status.field_is_enabled
     - field.field.status.status.field_name
 id: status.status.default
 targetEntityType: status
 bundle: status
 mode: default
 content:
+  field_is_enabled:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_name:
     type: string
     label: above
