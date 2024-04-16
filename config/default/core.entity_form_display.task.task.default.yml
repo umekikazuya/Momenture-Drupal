@@ -9,7 +9,6 @@ dependencies:
     - field.field.task.task.field_name
     - field.field.task.task.field_ref_project
     - field.field.task.task.field_ref_status
-    - field.field.task.task.field_repeat
     - field.field.task.task.field_start_date
   module:
     - datetime
@@ -52,13 +51,6 @@ content:
     weight: 6
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_repeat:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_start_date:
     type: datetime_default
