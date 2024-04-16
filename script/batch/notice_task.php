@@ -9,18 +9,16 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Site\Settings;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\eck\EckEntityInterface;
-use Drush\Drush;
 use GuzzleHttp\Client;
 
 /**
  * Repeat task.
  */
 function notice_task() {
-  // Log.
-  $logger = Drush::logger('notice_task');
 
   // Today.
-  $today = DrupalDateTime::createFromFormat(DateTimeItemInterface::DATE_STORAGE_FORMAT, 'now');
+  $datetime = new DrupalDateTime();
+  $today = $datetime->format(DateTimeItemInterface::DATE_STORAGE_FORMAT);
 
   // Fetch status entity exclude close.
   $status_ids = fetch_open_status_entities('field_is_enabled');
@@ -54,7 +52,7 @@ function notice_task() {
   $channel_id = Settings::get('slack_channel_id');
   $client = new Client();
   // Send message to slack.
-  $client->post('https://slack.com/api/chat.postMessage', [
+  $res = $client->post('https://slack.com/api/chat.postMessage', [
     'headers' => [
       'Authorization' => "Bearer {$token}",
       'Content-Type' => 'application/json',
@@ -64,6 +62,7 @@ function notice_task() {
       'text' => $message,
     ],
   ]);
+  $res->getStatusCode();
 }
 
 /**

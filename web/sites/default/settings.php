@@ -112,6 +112,8 @@ $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/default';
  *
  * @see \Drupal\Core\Site\Settings::get()
  */
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(DRUPAL_ROOT));
+$dotenv->load();
 $settings['slack_token'] = $_ENV['SLACK_TOKEN'];
 $settings['slack_channel_id'] = $_ENV['SLACK_CHANNEL_ID'];
 
