@@ -19,57 +19,29 @@ function notice_task() {
   // Log.
   $logger = Drush::logger('notice_task');
 
-  // Table info.
-  $entity_type = 'task';
-  $bundle_type_task = 'task';
-
-  // Entity Storage.
-  $entity_storage = \Drupal::entityTypeManager()->getStorage($entity_type);
-
   // Today.
-  $drupal_date_time = new DrupalDateTime();
-  $today = $drupal_date_time->format(DateTimeItemInterface::DATE_STORAGE_FORMAT);
+  $today = DrupalDateTime::createFromFormat(DateTimeItemInterface::DATE_STORAGE_FORMAT, 'now');
 
-  // Status Entityの条件。Custom Statusで無効状態（Close）のタスクは除外。.
-  $status_ids = \Drupal::entityQuery('status')
-    ->accessCheck(FALSE)
-    ->condition('type', 'status')
-    ->condition('field_is_enabled', 1)
-    ->execute();
+  // Fetch status entity exclude close.
+  $status_ids = fetch_open_status_entities('field_is_enabled');
 
-  // Conditon.
-  // Open かつ 「開始日が今日以前（今日を含む）」の条件のタスク。
-  // Get entity.
-  $entity_ids = $entity_storage
-    ->getQuery()
-    ->accessCheck(FALSE)
-    ->condition($entity_storage->getEntityType()->getKey('bundle'), $bundle_type_task)
-    ->condition('field_start_date', $today, '<=')
-    ->condition('field_ref_status', $status_ids, 'IN')
-    ->execute();
+  // Fetch & Load task entities.
+  $entities = fetch_task_entities($today, $status_ids);
 
   // Render markup array.
-  $render = [];
-  foreach ($entity_storage->loadMultiple($entity_ids) as $id => $entity) {
+  $data = [];
+  foreach ($entities as $id => $entity) {
     if ($entity instanceof EckEntityInterface) {
-      // Get task's project info.
-      $project_name = 'No Project';
-      $project_entity = $entity->get('field_ref_project')?->entity ?? FALSE;
-      if ($project_entity instanceof EckEntityInterface
-        && $project_entity->hasField('field_name')
-      ) {
-        $project_name = $project_entity->get('field_name')?->getString();
-      }
-
-      // Render markup array.
-      $render[$project_name][$id] = [];
-      $render[$project_name][$id]['name'] = $entity->hasField('field_name') ? $entity->get('field_name')?->getString() : 'No Label.';
-      $render[$project_name][$id]['start_date'] = $entity->hasField('field_start_date') ? $entity->get('field_start_date')?->getString() : '開始日設定なし';
+      $project_name = get_project_name($entity);
+      $data[$project_name][$id] = [
+        'name' => get_field_value($entity, 'field_name', 'No Label.'),
+        'start_date' => get_field_value($entity, 'field_start_date', '開始日設定なし'),
+      ];
     }
   }
 
   $message = "";
-  foreach ($render as $i => $o) {
+  foreach ($data as $i => $o) {
     $message .= "*$i*\n";
 
     foreach (array_values($o) as $item) {
@@ -92,6 +64,55 @@ function notice_task() {
       'text' => $message,
     ],
   ]);
+}
+
+/**
+ * Fetch Status entities.
+ *
+ * @param string $field_name_enable
+ *   Field name in valid state.
+ *
+ * @return int|array
+ *   Entity ids.
+ */
+function fetch_open_status_entities(string $field_name_enable): int|array {
+  return \Drupal::entityQuery('status')
+    ->accessCheck(FALSE)
+    ->condition('type', 'status')
+    ->condition($field_name_enable, 1)
+    ->execute();
+}
+
+/**
+ * Fetch Task entities.
+ */
+function fetch_task_entities($today, $status_ids): array {
+  $entity_storage = \Drupal::entityTypeManager()->getStorage('task');
+  $entity_query = $entity_storage
+    ->getQuery()
+    ->accessCheck(FALSE)
+    ->condition($entity_storage->getEntityType()->getKey('bundle'), 'task')
+    ->condition('field_start_date', $today, '<=')
+    ->condition('field_ref_status', $status_ids, 'IN');
+  return $entity_storage->loadMultiple($entity_query->execute());
+}
+
+/**
+ * Get project name.
+ */
+function get_project_name($entity) {
+  $project_entity = $entity->get('field_ref_project')?->entity;
+  if ($project_entity instanceof EckEntityInterface && $project_entity->hasField('field_name')) {
+    return $project_entity->get('field_name')?->getString() ?: 'No Project';
+  }
+  return 'No Project';
+}
+
+/**
+ * Get field value.
+ */
+function get_field_value(EckEntityInterface $entity, $field_name, $default_value) {
+  return $entity->hasField($field_name) ? $entity->get($field_name)?->getString() : $default_value;
 }
 
 notice_task();
