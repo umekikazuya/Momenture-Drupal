@@ -33,3 +33,15 @@ toolkit.add_status:
   title: 'Add Status'
   appears_on:
     - page_manager.page_view_status_status-layout_builder-0
+
+toolkit.add_repeat_task:
+  route_name: eck.entity.add
+  route_parameters:
+    eck_entity_type: task
+    eck_entity_bundle: repeat
+  options:
+    query:
+      destination: /flowsync/status
+  title: 'Add Repeat Task'
+  appears_on:
+  - page_manager.page_view_status_status-layout_builder-0

@@ -5,6 +5,7 @@ dependencies:
   config:
     - page_manager.page.status
     - views.view.status
+    - views.view.task
   module:
     - layout_discovery
     - views
@@ -24,18 +25,31 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
+        8fb04fa3-d90d-4904-a646-6478dbaf7321:
+          uuid: 8fb04fa3-d90d-4904-a646-6478dbaf7321
+          region: content
+          configuration:
+            id: 'views_block:task-repeat'
+            label: 繰り返しタスク
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: 繰り返しタスク
+            items_per_page: none
+          weight: 3
+          additional: {  }
         28d23046-237c-4aae-8604-faef139003a8:
           uuid: 28d23046-237c-4aae-8604-faef139003a8
           region: content
           configuration:
             id: 'views_block:status-list'
-            label: ''
-            label_display: '0'
+            label: ステータス
+            label_display: visible
             provider: views
             context_mapping: {  }
-            views_label: ''
+            views_label: ステータス
             items_per_page: none
-          weight: 0
+          weight: 2
           additional: {  }
       third_party_settings: {  }
 page: status
