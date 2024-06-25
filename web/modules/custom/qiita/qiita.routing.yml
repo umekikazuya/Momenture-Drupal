@@ -1,0 +1,6 @@
+qiita.rss:
+  path: '/api/qiita/rss'
+  defaults:
+    _controller: '\Drupal\qiita\Controller\QiitaController'
+  requirements:
+    _access: 'TRUE'
