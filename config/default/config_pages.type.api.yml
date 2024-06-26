@@ -1,0 +1,17 @@
+uuid: 7a939ef9-1d04-472f-8a9b-85b72f7ef192
+langcode: ja
+status: true
+dependencies: {  }
+id: api
+label: API設定
+token: false
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /api
+  weight: 0
+  description: ''

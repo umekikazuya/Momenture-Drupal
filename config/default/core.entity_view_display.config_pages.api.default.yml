@@ -1,0 +1,22 @@
+uuid: d267308a-21b1-4024-a4cd-d164302cfe38
+langcode: ja
+status: true
+dependencies:
+  config:
+    - config_pages.type.api
+    - field.field.config_pages.api.field_qiita_feed_cache_duration
+id: config_pages.api.default
+targetEntityType: config_pages
+bundle: api
+mode: default
+content:
+  field_qiita_feed_cache_duration:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
