@@ -44,6 +44,7 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
+  qiita: 0
   rabbit_hole: 0
   serialization: 0
   system: 0
