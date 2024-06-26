@@ -48,24 +48,34 @@ final class QiitaController extends ControllerBase {
    *   The JSON response with HTML content or a 403 status code on failure.
    */
   public function __invoke(string $id) {
-    $res = new JsonResponse();
-    $rss_url = 'https://qiita.com/' . $id . '/feed';
-    try {
-      $http_request = $this->httpClient->get($rss_url);
-      $feed = $http_request->getBody()->getContents();
-      if (!$feed) {
-        throw new \Exception();
-      }
-      $data = $this->loadRawFeedData($feed);
-      if (!$data) {
-        throw new \Exception();
-      }
-      $data = $this->parseXml($data, $rss_url);
+    $cache_key = 'api_qiita:' . $id;
+    $cache = $this->cache()->get($cache_key);
+    if ($cache) {
+      $data = $cache->data;
     }
-    catch (\Exception $e) {
-      return $res->setStatusCode(403);
+    else {
+      try {
+        $rss_url = 'https://qiita.com/' . $id . '/feed';
+        $http_request = $this->httpClient->get($rss_url);
+        $feed = $http_request->getBody()->getContents();
+        if (!$feed) {
+          throw new \Exception();
+        }
+        $data = $this->loadRawFeedData($feed);
+        if (!$data) {
+          throw new \Exception();
+        }
+        $data = $this->parseXml($data, $rss_url);
+
+        // Set cache.
+        $this->cache()->set($cache_key, $data, time() + 8 * 3600);
+      }
+      catch (\Exception $e) {
+        return new JsonResponse([], 403);
+      }
     }
-    return $res->setJson(json_encode($data));
+
+    return new JsonResponse($data);
   }
 
   /**
