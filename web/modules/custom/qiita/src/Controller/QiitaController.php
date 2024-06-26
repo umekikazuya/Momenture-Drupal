@@ -47,10 +47,11 @@ final class QiitaController extends ControllerBase {
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The JSON response with HTML content or a 403 status code on failure.
    */
-  public function __invoke() {
+  public function __invoke(string $id) {
     $res = new JsonResponse();
+    $rss_url = 'https://qiita.com/' . $id . '/feed';
     try {
-      $http_request = $this->httpClient->get('https://qiita.com/umekikazuya/feed');
+      $http_request = $this->httpClient->get($rss_url);
       $feed = $http_request->getBody()->getContents();
       if (!$feed) {
         throw new \Exception();
@@ -59,17 +60,12 @@ final class QiitaController extends ControllerBase {
       if (!$data) {
         throw new \Exception();
       }
-      $markup_li = $this->parseXml($data);
-
-      $html = <<<HTML
-      <div class="p-widget__header"><h3>Qiita</h3>umekikazuya</div>
-      <div class="p-rss-feed"><ul class="p-rss-feed__wrapper">{$markup_li}</ul></div>
-      HTML;
+      $data = $this->parseXml($data, $rss_url);
     }
     catch (\Exception $e) {
       return $res->setStatusCode(403);
     }
-    return $res->setJson(json_encode($html));
+    return $res->setJson(json_encode($data));
   }
 
   /**
@@ -92,35 +88,37 @@ final class QiitaController extends ControllerBase {
   /**
    * Parses XML data and generates list item markup for each feed item.
    *
-   * @param \SimpleXMLElement $data
+   * @param \SimpleXMLElement $xml
    *   The XML data.
+   * @param string $url
+   *   Rss url.
    *
-   * @return string
-   *   The HTML markup for the list items.
+   * @return array
+   *   The array for the list items.
    */
-  private function parseXml(\SimpleXMLElement $data) {
-    $markup_li = '';
-    foreach ($data->entry as $o) {
+  private function parseXml(\SimpleXMLElement $xml, string $url): array {
+    $articles = [];
+    foreach ($xml->entry as $o) {
       // Get feed item.
-      $title = $o->title;
-      $link = $o->url;
-      $published = $o->published;
+      $title = (string) $o->title;
+      $link = (string) $o->url;
+      $published = (string) $o->published;
       if (!isset($title) || !isset($link) || !isset($published)) {
         continue;
       }
-      $pub_date = new DrupalDateTime($o->published);
+      $published = new DrupalDateTime($published);
 
-      // Markup.
-      $markup_li .= <<<HTML
-      <li class="p-rss-feed__item">
-        <a class="p-rss-feed__item-link" href="{$link}" target="_blank">
-          <span class="p-rss-feed__title">{$title}</span>
-          <time datatime="{$pub_date->format('Y-m-d')}" class="p-rss-feed__item-date">{$pub_date->format('Y年n月j日')}</time>
-        </a>
-      </li>
-      HTML;
+      $articles[] = [
+        'title' => $title,
+        'link' => $link,
+        'published' => $published->format('c'),
+      ];
     }
-    return $markup_li;
+    return [
+      'title' => (string) $xml->title,
+      'link' => $url,
+      'data' => $articles,
+    ];
   }
 
 }

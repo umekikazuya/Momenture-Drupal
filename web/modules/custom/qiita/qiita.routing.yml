@@ -1,5 +1,5 @@
 qiita.rss:
-  path: '/api/qiita/rss'
+  path: '/api/qiita/feed/{id}'
   defaults:
     _controller: '\Drupal\qiita\Controller\QiitaController'
   requirements:
