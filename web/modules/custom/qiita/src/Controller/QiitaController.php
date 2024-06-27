@@ -20,7 +20,7 @@ final class QiitaController extends ControllerBase {
    *
    * @var string
    */
-  const QIITA_URL = 'https://qiita.com/';
+  private const QIITA_URL = 'https://qiita.com/';
 
   /**
    * Http client.
