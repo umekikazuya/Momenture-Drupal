@@ -16,6 +16,13 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 final class QiitaController extends ControllerBase {
 
   /**
+   * Qiita Url.
+   *
+   * @var string
+   */
+  const QIITA_URL = 'https://qiita.com/';
+
+  /**
    * Http client.
    */
   protected Client $httpClient;
@@ -55,8 +62,8 @@ final class QiitaController extends ControllerBase {
     }
     else {
       try {
-        $rss_url = 'https://qiita.com/' . $id . '/feed';
-        $http_request = $this->httpClient->get($rss_url);
+        $qiita_url = self::QIITA_URL . $id;
+        $http_request = $this->httpClient->get($qiita_url . '/feed');
         $feed = $http_request->getBody()->getContents();
         if (!$feed) {
           throw new \Exception();
@@ -65,7 +72,7 @@ final class QiitaController extends ControllerBase {
         if (!$data) {
           throw new \Exception();
         }
-        $data = $this->parseXml($data, $rss_url);
+        $data = $this->parseXml($data, $qiita_url);
 
         // Set cache.
         $this->cache()->set($cache_key, $data, time() + 8 * 3600);
