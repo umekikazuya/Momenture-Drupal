@@ -1,0 +1,23 @@
+uuid: 3ab826a0-b111-4a2f-8a25-5268939bd629
+langcode: ja
+status: true
+dependencies:
+  config:
+    - config_pages.type.api
+    - field.storage.config_pages.field_qiita_feed_cache_duration
+id: config_pages.api.field_qiita_feed_cache_duration
+field_name: field_qiita_feed_cache_duration
+entity_type: config_pages
+bundle: api
+label: Cache保持期間（Qiita/RSS）
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
