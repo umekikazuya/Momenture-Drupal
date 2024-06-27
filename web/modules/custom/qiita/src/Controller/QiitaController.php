@@ -127,7 +127,7 @@ final class QiitaController extends ControllerBase {
 
       $articles[] = [
         'title' => $title,
-        'link' => $link,
+        'link' => $url,
         'published' => $published->format('c'),
       ];
     }
