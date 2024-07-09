@@ -135,7 +135,7 @@ $settings['slack_channel_id'] = $_ENV['SLACK_CHANNEL_ID'];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'WdK_M3N5uEDaWvhZqkCtNd_l5vj6WP_OxM3ZkSRkZlj-LmklqWIkKNweqdrYxZDOgeM8Cmocvw';
+$settings['hash_salt'] = 'gojxpyWQyR8A3t4m4cpmuVd90mGvo7TPi1U3MmVWN4QPbTKIYOjkApfCwwQaD60h8zGfBuYCNg';
 
 /**
  * Deployment identifier.
@@ -749,6 +749,19 @@ switch (DRUPAL_ROOT) {
 
   // Lando.
   case '/app/web':
+    $databases['default']['default'] = array (
+      'database' => 'drupal10',
+      'username' => 'drupal10',
+      'password' => 'drupal10',
+      'prefix' => '',
+      'host' => 'database',
+      'port' => '3306',
+      'isolation_level' => 'READ COMMITTED',
+      'driver' => 'mysql',
+      'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+      'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+      'collation' => 'utf8mb4_general_ci',
+    );
     if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
       include $app_root . '/' . $site_path . '/settings.local.php';
     }
