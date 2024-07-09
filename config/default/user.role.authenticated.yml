@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
+    - config_pages
     - eck
     - file
     - filter
@@ -32,10 +33,12 @@ permissions:
   - 'delete own project entities'
   - 'delete own status entities'
   - 'delete own task entities'
+  - 'edit api config page entity'
   - 'edit own project entities'
   - 'edit own status entities'
   - 'edit own task entities'
   - 'use text format basic_html'
+  - 'view api config page entity'
   - 'view own project entities'
   - 'view own status entities'
   - 'view own task entities'

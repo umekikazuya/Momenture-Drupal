@@ -11,7 +11,7 @@ third_party_settings:
 name: ひとりごと
 type: monologue
 description: "・読書して感じたこと\r\n・日常でふと思ったこと"
-help: ''
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false
