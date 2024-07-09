@@ -19,9 +19,9 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/admin_toolbar": "^3.4",
         "drupal/config_pages": "^2.15",
-        "drupal/core-composer-scaffold": "10.2.5",
-        "drupal/core-project-message": "10.2.5",
-        "drupal/core-recommended": "10.2.5",
+        "drupal/core-composer-scaffold": "10.3",
+        "drupal/core-project-message": "10.3",
+        "drupal/core-recommended": "10.3",
         "drupal/devel": "^5.1",
         "drupal/eck": "^2.0",
         "drupal/field_group": "^3.4",
@@ -113,6 +113,9 @@
         "patches": {
             "drupal/verf": {
                 "Support for entity types created with ECK.": "patches/drupal/verf/support-eck.patch"
+            },
+            "drupal/form_mode_control": {
+                "https://www.drupal.org/project/form_mode_control/issues/3431354#comment-15653319": "https://www.drupal.org/files/issues/2024-06-24/3431354-5.patch"
             }
         },
         "patchLevel": {

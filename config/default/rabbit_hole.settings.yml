@@ -1,6 +1,5 @@
 _core:
   default_config_hash: op5zJk4bmDxEGOgAYNCkpAQOLG0YZhNMrxlSkdYSQIM
-langcode: ja
 enabled_entity_types:
   0: block_content
   1: menu_link_content
