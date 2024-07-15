@@ -51,6 +51,9 @@ final class QiitaController extends ControllerBase {
   /**
    * Builds and returns the response containing the Qiita feed in HTML format.
    *
+   * @param string $id
+   *   Qiita accout id.
+   *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The JSON response with HTML content or a 403 status code on failure.
    */
@@ -118,7 +121,8 @@ final class QiitaController extends ControllerBase {
     foreach ($xml->entry as $o) {
       // Get feed item.
       $title = (string) $o->title;
-      $link = (string) $o->url;
+      $attributes = $o->link->attributes();
+      $link = (string) $attributes['href'];
       $published = (string) $o->published;
       if (!isset($title) || !isset($link) || !isset($published)) {
         continue;
@@ -127,7 +131,7 @@ final class QiitaController extends ControllerBase {
 
       $articles[] = [
         'title' => $title,
-        'link' => $url,
+        'link' => $link,
         'published' => $published->format('c'),
       ];
     }

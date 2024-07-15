@@ -7,7 +7,7 @@ proxy:
     - diary.phpmyadmin.dev.lando
 config:
   php: "8.3"
-  composer_version: '2.2.12'
+  composer_version: '2.7.7'
   via: apache:2.4
   database: mysql
   webroot: web
