@@ -2,7 +2,7 @@
 
 namespace Drupal\qiita\Service;
 
-use Drupal\qiita\Service\Interface\FeedParserInterface;
+use Drupal\qiita\Interface\FeedParserInterface;
 
 /**
  * Abstract base class for feed parser services.
@@ -13,6 +13,17 @@ use Drupal\qiita\Service\Interface\FeedParserInterface;
  * the parseXml method.
  */
 abstract class FeedParserServiceBase implements FeedParserInterface {
+
+  /**
+   * {@inheritDoc}
+   */
+  public function loadRawFeedData(string $feed): \SimpleXMLElement|false {
+    $data = simplexml_load_string($feed);
+    if (assert($data instanceof \SimpleXMLElement)) {
+      return $data;
+    }
+    return FALSE;
+  }
 
   /**
    * {@inheritDoc}

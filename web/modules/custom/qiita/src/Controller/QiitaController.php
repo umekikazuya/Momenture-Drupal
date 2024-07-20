@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Drupal\qiita\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\qiita\Interface\FeedParserInterface;
 use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -28,15 +28,24 @@ final class QiitaController extends ControllerBase {
   protected Client $httpClient;
 
   /**
+   * Feed Parser.
+   */
+  protected FeedParserInterface $feedParser;
+
+  /**
    * Constructor.
    *
    * @param \GuzzleHttp\Client $http_client
    *   Guzzle.
+   * @param \Drupal\qiita\Service\Interface\FeedParserInterface $feed_parser
+   *   Feed Parser.
    */
   public function __construct(
     Client $http_client,
+    FeedParserInterface $feed_parser,
   ) {
     $this->httpClient = $http_client;
+    $this->feedParser = $feed_parser;
   }
 
   /**
@@ -45,6 +54,7 @@ final class QiitaController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('http_client'),
+      $container->get('qiita.feed_parser'),
     );
   }
 
@@ -71,12 +81,12 @@ final class QiitaController extends ControllerBase {
         if (!$feed) {
           throw new \Exception();
         }
-        $data = $this->loadRawFeedData($feed);
+        // Load and parse xml data.
+        $data = $this->feedParser->loadRawFeedData($feed);
         if (!$data) {
           throw new \Exception();
         }
-        $data = $this->parseXml($data, $qiita_url);
-
+        $data = $this->feedParser->parseXml($data);
         // Set cache.
         $this->cache()->set($cache_key, $data, time() + 8 * 3600);
       }
@@ -84,62 +94,18 @@ final class QiitaController extends ControllerBase {
         return new JsonResponse([], 403);
       }
     }
-
     return new JsonResponse($data);
   }
 
   /**
-   * Load raw feed data.
-   *
-   * @param string $feed
-   *   The raw feed data as a string.
-   *
-   * @return \SimpleXMLElement|false
-   *   The SimpleXMLElement object if successful, FALSE otherwise.
+   * Get feed data.
    */
-  private function loadRawFeedData(string $feed): \SimpleXMLElement|false {
-    $data = simplexml_load_string($feed);
-    if (assert($data instanceof \SimpleXMLElement)) {
-      return $data;
+  protected function getFeedData(string $url) {
+    $http_request = $this->httpClient->get($url);
+    $feed = $http_request->getBody()->getContents();
+    if (!$feed) {
+      throw new \Exception();
     }
-    return FALSE;
-  }
-
-  /**
-   * Parses XML data and generates list item markup for each feed item.
-   *
-   * @param \SimpleXMLElement $xml
-   *   The XML data.
-   * @param string $url
-   *   Rss url.
-   *
-   * @return array
-   *   The array for the list items.
-   */
-  private function parseXml(\SimpleXMLElement $xml, string $url): array {
-    $articles = [];
-    foreach ($xml->entry as $o) {
-      // Get feed item.
-      $title = (string) $o->title;
-      $attributes = $o->link->attributes();
-      $link = (string) $attributes['href'];
-      $published = (string) $o->published;
-      if (!isset($title) || !isset($link) || !isset($published)) {
-        continue;
-      }
-      $published = new DrupalDateTime($published);
-
-      $articles[] = [
-        'title' => $title,
-        'link' => $link,
-        'published' => $published->format('c'),
-      ];
-    }
-    return [
-      'title' => (string) $xml->title,
-      'link' => $url,
-      'data' => $articles,
-    ];
   }
 
 }

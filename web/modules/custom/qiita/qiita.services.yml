@@ -1,0 +1,3 @@
+services:
+  qiita.feed_parser:
+    class: Drupal\qiita\Service\QiitaFeedParserService
