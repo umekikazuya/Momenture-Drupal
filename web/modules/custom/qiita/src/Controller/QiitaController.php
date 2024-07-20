@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Drupal\qiita\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\qiita\Interface\FeedFetcherInterface;
 use Drupal\qiita\Interface\FeedParserInterface;
-use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -23,9 +23,9 @@ final class QiitaController extends ControllerBase {
   private const QIITA_URL = 'https://qiita.com/';
 
   /**
-   * Http client.
+   * Feed Fetcher.
    */
-  protected Client $httpClient;
+  protected FeedFetcherInterface $feedFetcher;
 
   /**
    * Feed Parser.
@@ -33,18 +33,23 @@ final class QiitaController extends ControllerBase {
   protected FeedParserInterface $feedParser;
 
   /**
+   * CacheKey.
+   */
+  protected string $cacheKey;
+
+  /**
    * Constructor.
    *
-   * @param \GuzzleHttp\Client $http_client
-   *   Guzzle.
+   * @param \Drupal\qiita\Service\Interface\FeedFetcherInterface $feed_fetcher
+   *   Feed Fetcher.
    * @param \Drupal\qiita\Service\Interface\FeedParserInterface $feed_parser
    *   Feed Parser.
    */
   public function __construct(
-    Client $http_client,
+    FeedFetcherInterface $feed_fetcher,
     FeedParserInterface $feed_parser,
   ) {
-    $this->httpClient = $http_client;
+    $this->feedFetcher = $feed_fetcher;
     $this->feedParser = $feed_parser;
   }
 
@@ -53,9 +58,19 @@ final class QiitaController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('http_client'),
+      $container->get('qiita.feed_fetcher'),
       $container->get('qiita.feed_parser'),
     );
+  }
+
+  /**
+   * Set cache-key.
+   *
+   * @param string $id
+   *   Qiita account ID used to generate the cache key.
+   */
+  protected function setCacheKey(string $id): void {
+    $this->cacheKey = 'qiita:' . $id;
   }
 
   /**
@@ -68,19 +83,16 @@ final class QiitaController extends ControllerBase {
    *   The JSON response with HTML content or a 403 status code on failure.
    */
   public function __invoke(string $id) {
-    $cache_key = 'api_qiita:' . $id;
-    $cache = $this->cache()->get($cache_key);
+    // Cache.
+    $this->setCacheKey($id);
+    $cache = $this->cache()->get($this->cacheKey);
     if ($cache) {
       $data = $cache->data;
     }
     else {
       try {
-        $qiita_url = self::QIITA_URL . $id;
-        $http_request = $this->httpClient->get($qiita_url . '/feed');
-        $feed = $http_request->getBody()->getContents();
-        if (!$feed) {
-          throw new \Exception();
-        }
+        // Get request.
+        $feed = $this->feedFetcher->get(self::QIITA_URL . $id . '/feed');
         // Load and parse xml data.
         $data = $this->feedParser->loadRawFeedData($feed);
         if (!$data) {
@@ -88,24 +100,13 @@ final class QiitaController extends ControllerBase {
         }
         $data = $this->feedParser->parseXml($data);
         // Set cache.
-        $this->cache()->set($cache_key, $data, time() + 8 * 3600);
+        $this->cache()->set($this->cacheKey, $data, time() + 8 * 3600);
       }
       catch (\Exception $e) {
         return new JsonResponse([], 403);
       }
     }
     return new JsonResponse($data);
-  }
-
-  /**
-   * Get feed data.
-   */
-  protected function getFeedData(string $url) {
-    $http_request = $this->httpClient->get($url);
-    $feed = $http_request->getBody()->getContents();
-    if (!$feed) {
-      throw new \Exception();
-    }
   }
 
 }
