@@ -1,0 +1,19 @@
+uuid: 46518bf3-f27d-453c-ad7a-edd4267b2052
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.zenn
+    - field.storage.article.field_summary
+id: article.zenn.field_summary
+field_name: field_summary
+entity_type: article
+bundle: zenn
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,10 @@
+uuid: f3edb176-844a-43aa-af6c-3415532636ef
+langcode: ja
+status: false
+dependencies: {  }
+id: article
+label: 記事
+uid: false
+created: false
+changed: false
+title: true

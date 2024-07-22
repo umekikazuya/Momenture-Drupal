@@ -1,0 +1,9 @@
+uuid: 26839417-e482-434e-83e7-54338e2817ec
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.article
+name: Mochiya
+type: mochiya
+description: ''

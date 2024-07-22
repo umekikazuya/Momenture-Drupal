@@ -1,0 +1,19 @@
+uuid: a5d95a7e-03c1-44cc-99c4-94c7bd16b5c7
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.mochiya
+    - field.storage.article.field_summary
+id: article.mochiya.field_summary
+field_name: field_summary
+entity_type: article
+bundle: mochiya
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
