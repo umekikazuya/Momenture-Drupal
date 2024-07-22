@@ -4,15 +4,23 @@ status: true
 dependencies:
   config:
     - eck.eck_type.article.qiita
+    - field.field.article.qiita.field_created
     - field.field.article.qiita.field_link
     - field.field.article.qiita.field_summary
   module:
+    - datetime
     - link
 id: article.qiita.default
 targetEntityType: article
 bundle: qiita
 mode: default
 content:
+  field_created:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_link:
     type: link_default
     weight: 1
@@ -29,19 +37,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

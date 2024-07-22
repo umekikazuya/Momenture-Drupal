@@ -1,0 +1,20 @@
+uuid: 8b30c8e1-14a0-462b-b98c-ff33eab20783
+langcode: ja
+status: true
+dependencies:
+  module:
+    - datetime
+    - eck
+id: article.field_created
+field_name: field_created
+entity_type: article
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

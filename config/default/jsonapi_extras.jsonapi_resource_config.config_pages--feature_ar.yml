@@ -1,0 +1,55 @@
+uuid: fe10a175-8f96-462e-a090-7296c9175b53
+langcode: ja
+status: true
+dependencies:
+  config:
+    - config_pages.type.feature_ar
+id: config_pages--feature_ar
+disabled: false
+path: cp/featurear
+resourceType: config_pages--feature_ar
+resourceFields:
+  id:
+    disabled: true
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: uuid_link
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  label:
+    disabled: false
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: json
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  context:
+    disabled: false
+    fieldName: context
+    publicName: context
+    enhancer:
+      id: ''
+  changed:
+    disabled: false
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sO'
+  field_ref_article:
+    disabled: false
+    fieldName: field_ref_article
+    publicName: field_ref_article
+    enhancer:
+      id: uuid_link

@@ -1,0 +1,21 @@
+uuid: c9383247-16e9-40e5-86f2-e43ed4b79e50
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.mochiya
+    - field.storage.article.field_created
+  module:
+    - datetime
+id: article.mochiya.field_created
+field_name: field_created
+entity_type: article
+bundle: mochiya
+label: 投稿日
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

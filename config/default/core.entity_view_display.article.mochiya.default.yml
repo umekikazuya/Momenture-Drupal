@@ -4,15 +4,26 @@ status: true
 dependencies:
   config:
     - eck.eck_type.article.mochiya
+    - field.field.article.mochiya.field_created
     - field.field.article.mochiya.field_link
     - field.field.article.mochiya.field_summary
   module:
+    - datetime
     - link
 id: article.mochiya.default
 targetEntityType: article
 bundle: mochiya
 mode: default
 content:
+  field_created:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_link:
     type: link
     label: above
