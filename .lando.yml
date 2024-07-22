@@ -13,6 +13,8 @@ config:
   webroot: web
 services:
   appserver:
+    build:
+      - composer install
     ssl: true
   phpmyadmin:
     ssl: true
@@ -46,3 +48,7 @@ tooling:
       no-wipe:
         description: Do not destroy the existing database before an import
         boolean: true
+  flush-caches:
+    service: appserver
+    description: "Flush all Drupal caches via Drush"
+    cmd: bash script/dev/cache.sh
