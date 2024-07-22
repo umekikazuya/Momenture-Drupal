@@ -1,0 +1,20 @@
+uuid: dabe8cb5-9178-49df-a34f-3e41fb687e98
+langcode: ja
+status: true
+dependencies:
+  config:
+    - config_pages.type.feature_ar
+    - field.field.config_pages.feature_ar.field_ref_article
+id: config_pages.feature_ar.default
+targetEntityType: config_pages
+bundle: feature_ar
+mode: default
+content:
+  field_ref_article:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  label: true

@@ -1,0 +1,33 @@
+uuid: 3c2714e9-ad87-4372-ba2f-d0839b3aee3b
+langcode: ja
+status: true
+dependencies:
+  config:
+    - config_pages.type.feature_ar
+    - eck.eck_type.article.mochiya
+    - eck.eck_type.article.qiita
+    - eck.eck_type.article.zenn
+    - field.storage.config_pages.field_ref_article
+id: config_pages.feature_ar.field_ref_article
+field_name: field_ref_article
+entity_type: config_pages
+bundle: feature_ar
+label: PickUp!!
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:article'
+  handler_settings:
+    target_bundles:
+      mochiya: mochiya
+      qiita: qiita
+      zenn: zenn
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: mochiya
+field_type: entity_reference

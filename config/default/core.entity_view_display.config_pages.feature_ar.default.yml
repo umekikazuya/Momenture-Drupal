@@ -1,0 +1,21 @@
+uuid: 0721ae64-f2ec-43ad-88b5-01141c7561b2
+langcode: ja
+status: true
+dependencies:
+  config:
+    - config_pages.type.feature_ar
+    - field.field.config_pages.feature_ar.field_ref_article
+id: config_pages.feature_ar.default
+targetEntityType: config_pages
+bundle: feature_ar
+mode: default
+content:
+  field_ref_article:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
