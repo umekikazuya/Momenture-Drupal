@@ -1,0 +1,9 @@
+uuid: 86b710fb-0ef8-4d42-9dde-38723f9ed058
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.article
+name: Zenn
+type: zenn
+description: ''

@@ -1,0 +1,9 @@
+uuid: 528353ca-6f54-4abd-82cd-bf36495ce2f6
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.article
+name: Qiita
+type: qiita
+description: ''

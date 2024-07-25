@@ -1,0 +1,19 @@
+uuid: f54bd4f4-356d-4101-b9d5-539f77f68770
+langcode: ja
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+id: article.field_link
+field_name: field_link
+entity_type: article
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 5cc7d47c-6ae6-4a12-9df2-e0d914c9ce8c
+langcode: ja
+status: true
+dependencies:
+  module:
+    - eck
+id: article.field_summary
+field_name: field_summary
+entity_type: article
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

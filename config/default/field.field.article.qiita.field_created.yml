@@ -1,0 +1,21 @@
+uuid: 65eec072-5bff-4917-b784-e62b71f1ec34
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.qiita
+    - field.storage.article.field_created
+  module:
+    - datetime
+id: article.qiita.field_created
+field_name: field_created
+entity_type: article
+bundle: qiita
+label: 投稿日
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

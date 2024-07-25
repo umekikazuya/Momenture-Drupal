@@ -1,0 +1,17 @@
+uuid: 5faab86d-88f7-4780-8952-3983200d3f9d
+langcode: ja
+status: true
+dependencies: {  }
+id: feature_ar
+label: おすすめ記事管理
+token: false
+context:
+  show_warning: false
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: ''
+  weight: 0
+  description: ''

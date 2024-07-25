@@ -1,0 +1,23 @@
+uuid: fcc4d0e1-7205-433a-bc45-b9f1a498bfeb
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.qiita
+    - field.storage.article.field_link
+  module:
+    - link
+id: article.qiita.field_link
+field_name: field_link
+entity_type: article
+bundle: qiita
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

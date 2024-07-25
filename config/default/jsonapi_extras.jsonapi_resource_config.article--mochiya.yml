@@ -1,0 +1,65 @@
+uuid: 5897d996-c303-441d-821e-08f52ce71be7
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.mochiya
+id: article--mochiya
+disabled: false
+path: article/mochiya
+resourceType: article--mochiya
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  title:
+    disabled: false
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: false
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  field_created:
+    disabled: false
+    fieldName: field_created
+    publicName: field_created
+    enhancer:
+      id: ''
+  field_link:
+    disabled: false
+    fieldName: field_link
+    publicName: field_link
+    enhancer:
+      id: ''
+  field_summary:
+    disabled: false
+    fieldName: field_summary
+    publicName: field_summary
+    enhancer:
+      id: ''

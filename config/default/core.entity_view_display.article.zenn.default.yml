@@ -1,0 +1,44 @@
+uuid: 8f162acf-2746-4a52-af25-f898306958f8
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.zenn
+    - field.field.article.zenn.field_link
+    - field.field.article.zenn.field_summary
+  module:
+    - link
+id: article.zenn.default
+targetEntityType: article
+bundle: zenn
+mode: default
+content:
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  langcode: true
