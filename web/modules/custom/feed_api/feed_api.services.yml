@@ -1,0 +1,9 @@
+services:
+  feed_api.fetcher:
+    class: Drupal\feed_api\Service\FeedFetcherService
+    arguments:
+      - '@http_client'
+  feed_api.qiita_parser:
+    class: Drupal\feed_api\Service\QiitaFeedParserService
+  feed_api.zenn_parser:
+    class: Drupal\feed_api\Service\ZennFeedParserService

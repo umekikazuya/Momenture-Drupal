@@ -1,7 +1,0 @@
-services:
-  qiita.feed_fetcher:
-    class: Drupal\qiita\Service\FeedFetcherService
-    arguments:
-      - '@http_client'
-  qiita.feed_parser:
-    class: Drupal\qiita\Service\QiitaFeedParserService

@@ -1,0 +1,5 @@
+name: 'Feed API'
+type: module
+description: 'Provides Qiita API, Zenn API and RSS external integration functionality.Provides endpoints.'
+package: 'API'
+core_version_requirement: ^10

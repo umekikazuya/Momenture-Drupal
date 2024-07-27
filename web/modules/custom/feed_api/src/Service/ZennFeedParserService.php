@@ -2,30 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Drupal\qiita\Service;
+namespace Drupal\feed_api\Service;
 
 use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
- * Provides functionality to parse Qiita XML feeds.
+ * Provides functionality to parse Zenn XML feeds.
  *
- * This service is responsible for parsing XML feed data retrieved from Qiita.
+ * This service is responsible for parsing XML feed data retrieved from Zenn.
  * It converts the raw XML data into a structured array that can be easily
  * used within Drupal. This class extends the generic FeedParserServiceBase
- * to implement Qiita-specific parsing logic.
+ * to implement Zenn-specific parsing logic.
  */
-final class QiitaFeedParserService extends FeedParserServiceBase {
+final class ZennFeedParserService extends FeedParserServiceBase {
 
   /**
    * {@inheritDoc}
    */
   public function parseXml(\SimpleXMLElement $xml): array {
     $articles = [];
-    foreach ($xml->entry as $o) {
+    foreach ($xml->channel->item as $o) {
       // Get feed item.
       $title = (string) $o->title;
-      $attributes = $o->link->attributes();
-      $link = (string) $attributes['href'];
+      $link = (string) $o->link;
       $published = (string) $o->published;
       if (!isset($title) || !isset($link) || !isset($published)) {
         continue;
@@ -35,12 +34,12 @@ final class QiitaFeedParserService extends FeedParserServiceBase {
       $articles[] = [
         'title' => $title,
         'link' => $link,
-        'published' => $published->format('c'),
+        'published' => $published->format(DATE_ISO8601_EXPANDED),
       ];
     }
     return [
-      'title' => (string) $xml->title,
-      'link' => (string) current($xml->link[2] ?? []),
+      'title' => (string) $xml->channel->image->title,
+      'link' => (string) $xml->channel->image->link,
       'data' => $articles,
     ];
   }

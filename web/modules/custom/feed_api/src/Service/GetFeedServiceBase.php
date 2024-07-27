@@ -1,8 +1,8 @@
 <?php
 
-namespace Drupal\qiita\Service;
+namespace Drupal\feed_api\Service;
 
-use Drupal\qiita\Interface\FeedParserInterface;
+use Drupal\feed_api\Interface\FeedParserInterface;
 
 /**
  * Abstract base class for feed parser services.
@@ -12,7 +12,7 @@ use Drupal\qiita\Interface\FeedParserInterface;
  * Ensures adherence to the FeedParserInterface with implementation of
  * the parseXml method.
  */
-abstract class FeedParserServiceBase implements FeedParserInterface {
+abstract class GetFeedServiceBase implements FeedParserInterface {
 
   /**
    * {@inheritDoc}
