@@ -27,10 +27,15 @@ final class QiitaFeedParserService extends FeedParserServiceBase {
       $attributes = $o->link->attributes();
       $link = (string) $attributes['href'];
       $published = (string) $o->published;
-      if (!isset($title) || !isset($link) || !isset($published)) {
+      if (empty($title) || empty($link) || empty($published)) {
         continue;
       }
-      $published = new DrupalDateTime($published);
+      try {
+        $published = new DrupalDateTime($published);
+      }
+      catch (\Exception $e) {
+        continue;
+      }
 
       $articles[] = [
         'title' => $title,
