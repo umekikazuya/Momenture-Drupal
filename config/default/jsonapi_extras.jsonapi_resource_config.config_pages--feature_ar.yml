@@ -6,7 +6,7 @@ dependencies:
     - config_pages.type.feature_ar
 id: config_pages--feature_ar
 disabled: false
-path: cp/featurear
+path: cp/feature-article
 resourceType: config_pages--feature_ar
 resourceFields:
   id:
