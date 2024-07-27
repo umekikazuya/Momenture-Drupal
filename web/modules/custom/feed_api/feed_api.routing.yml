@@ -1,0 +1,12 @@
+feed_api.qiita:
+  path: '/api/qiita/{id}'
+  defaults:
+    _controller: '\Drupal\feed_api\Controller\QiitaController'
+  requirements:
+    _access: 'TRUE'
+feed_api.zenn:
+  path: '/api/zenn/{id}'
+  defaults:
+    _controller: '\Drupal\feed_api\Controller\ZennController'
+  requirements:
+    _access: 'TRUE'

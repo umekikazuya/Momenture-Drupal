@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\qiita\Interface;
+namespace Drupal\feed_api\Interface;
 
 /**
  * Interface for fetching feed data over HTTP.

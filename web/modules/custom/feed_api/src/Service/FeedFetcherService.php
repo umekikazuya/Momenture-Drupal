@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Drupal\qiita\Service;
+namespace Drupal\feed_api\Service;
 
-use Drupal\qiita\Interface\FeedFetcherInterface;
+use Drupal\feed_api\Interface\FeedFetcherInterface;
 use GuzzleHttp\Client;
 
 /**

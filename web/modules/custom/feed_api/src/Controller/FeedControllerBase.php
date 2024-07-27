@@ -2,25 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Drupal\qiita\Controller;
+namespace Drupal\feed_api\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\qiita\Interface\FeedFetcherInterface;
-use Drupal\qiita\Interface\FeedParserInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\feed_api\Interface\FeedControllerInterface;
+use Drupal\feed_api\Interface\FeedFetcherInterface;
+use Drupal\feed_api\Interface\FeedParserInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
- * Returns responses for Qiita routes.
+ * Provides a base controller for feed fetching and parsing.
  */
-final class QiitaController extends ControllerBase {
-
-  /**
-   * Qiita Url.
-   *
-   * @var string
-   */
-  private const QIITA_URL = 'https://qiita.com/';
+abstract class FeedControllerBase extends ControllerBase implements FeedControllerInterface {
 
   /**
    * Feed Fetcher.
@@ -38,53 +31,65 @@ final class QiitaController extends ControllerBase {
   protected string $cacheKey;
 
   /**
+   * Base URL for the feed.
+   */
+  protected string $baseUrl;
+
+  /**
    * Constructor.
    *
-   * @param \Drupal\qiita\Service\Interface\FeedFetcherInterface $feed_fetcher
+   * @param \Drupal\feed_api\Service\Interface\FeedFetcherInterface $feed_fetcher
    *   Feed Fetcher.
-   * @param \Drupal\qiita\Service\Interface\FeedParserInterface $feed_parser
+   * @param \Drupal\feed_api\Service\Interface\FeedParserInterface $feed_parser
    *   Feed Parser.
+   * @param string $base_url
+   *   The base URL for the feed.
    */
   public function __construct(
     FeedFetcherInterface $feed_fetcher,
     FeedParserInterface $feed_parser,
+    string $base_url,
   ) {
     $this->feedFetcher = $feed_fetcher;
     $this->feedParser = $feed_parser;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('qiita.feed_fetcher'),
-      $container->get('qiita.feed_parser'),
-    );
+    $this->baseUrl = $base_url;
   }
 
   /**
    * Set cache-key.
    *
    * @param string $id
-   *   Qiita account ID used to generate the cache key.
+   *   Account ID used to generate the cache key.
    */
   protected function setCacheKey(string $id): void {
-    $this->cacheKey = 'qiita:' . $id;
+    $this->cacheKey = parse_url($this->buildFeedUrl($id), PHP_URL_HOST) . ':' . $id;
   }
 
   /**
-   * Builds and returns the response containing the Qiita feed in HTML format.
+   * Builds and returns the response containing the feed in HTML format.
    *
    * @param string $id
-   *   Qiita accout id.
+   *   Accout id.
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The JSON response with HTML content or a 403 status code on failure.
    */
   public function __invoke(string $id) {
-    // Cache.
     $this->setCacheKey($id);
+    return $this->fetchFeed($id);
+  }
+
+  /**
+   * Fetch and return the feed data as a JSON response.
+   *
+   * @param string $id
+   *   The account ID for which the feed is to be fetched.
+   *
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *   The JSON response with feed data.
+   */
+  public function fetchFeed(string $id): JsonResponse {
+    // Cache.
     $cache = $this->cache()->get($this->cacheKey);
     if ($cache) {
       $data = $cache->data;
@@ -92,7 +97,7 @@ final class QiitaController extends ControllerBase {
     else {
       try {
         // Get request.
-        $feed = $this->feedFetcher->get(self::QIITA_URL . $id . '/feed');
+        $feed = $this->feedFetcher->get($this->buildFeedUrl($id));
         // Load and parse xml data.
         $data = $this->feedParser->loadRawFeedData($feed);
         if (!$data) {
@@ -108,5 +113,10 @@ final class QiitaController extends ControllerBase {
     }
     return new JsonResponse($data);
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  abstract public function buildFeedUrl(string $id): string;
 
 }

@@ -17,6 +17,7 @@ module:
   dynamic_page_cache: 0
   eck: 0
   editor: 0
+  feed_api: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -46,7 +47,6 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
-  qiita: 0
   rabbit_hole: 0
   serialization: 0
   system: 0
