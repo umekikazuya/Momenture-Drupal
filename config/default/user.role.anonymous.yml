@@ -5,6 +5,8 @@ dependencies:
   config:
     - filter.format.restricted_html
   module:
+    - config_pages
+    - eck
     - filter
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
@@ -15,3 +17,6 @@ is_admin: false
 permissions:
   - 'access user profiles'
   - 'use text format restricted_html'
+  - 'view any article entities'
+  - 'view feature_ar config page entity'
+  - 'view unpublished eck entities'
