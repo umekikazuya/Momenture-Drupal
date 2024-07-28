@@ -21,11 +21,12 @@ final class ZennFeedParserService extends FeedParserServiceBase {
    */
   public function parseXml(\SimpleXMLElement $xml): array {
     $articles = [];
-    foreach ($xml->channel->item as $o) {
+    $channel = $xml->channel;
+    foreach ($channel->item as $o) {
       // Get feed item.
       $title = (string) $o->title;
       $link = (string) $o->link;
-      $published = (string) $o->published;
+      $published = (string) $o->pubDate;
       if (empty($title) || empty($link) || empty($published)) {
         continue;
       }
