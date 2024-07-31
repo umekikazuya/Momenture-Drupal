@@ -12,7 +12,8 @@ function toolkit_update_100001(&$sandbox) {
   $logger = \Drupal::logger('toolkit');
 
   $tasks = \Drupal::entityTypeManager()
-    ->getStorage('task');
+    ->getStorage('task')
+    ->loadMultiple();
 
   $count = $success = $fail = 0;
   foreach ($tasks as $task) {
@@ -46,7 +47,8 @@ function toolkit_update_100002(&$sandbox) {
   $logger = \Drupal::logger('toolkit');
 
   $projects = \Drupal::entityTypeManager()
-    ->getStorage('project');
+    ->getStorage('project')
+    ->loadMultiple();
 
   $count = $success = $fail = 0;
   foreach ($projects as $project) {
@@ -80,7 +82,8 @@ function toolkit_update_100003(&$sandbox) {
   $logger = \Drupal::logger('toolkit');
 
   $statuses = \Drupal::entityTypeManager()
-    ->getStorage('status');
+    ->getStorage('status')
+    ->loadMultiple();
 
   $count = $success = $fail = 0;
   foreach ($statuses as $status) {
