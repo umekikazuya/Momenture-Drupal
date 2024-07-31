@@ -34,7 +34,7 @@ function toolkit_update_100001(&$sandbox) {
     }
   }
 
-  $logger->info("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
+  $logger->notice("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
 
 }
 
@@ -68,7 +68,7 @@ function toolkit_update_100002(&$sandbox) {
     }
   }
 
-  $logger->info("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
+  $logger->notice("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
 
 }
 
@@ -102,6 +102,6 @@ function toolkit_update_100003(&$sandbox) {
     }
   }
 
-  $logger->info("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
+  $logger->notice("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
 
 }
