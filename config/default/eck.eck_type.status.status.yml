@@ -1,9 +1,0 @@
-uuid: 1df2c693-48fb-42ff-a923-920a14cad53e
-langcode: ja
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.status
-name: Status
-type: status
-description: ''
