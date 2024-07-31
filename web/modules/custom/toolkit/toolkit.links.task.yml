@@ -4,18 +4,6 @@ toolkit.flow_sync:
   route_name: page_manager.page_view_app_app-layout_builder-0
   weight: 0
 
-toolkit.flow_sync.project:
-  title: Project
-  base_route: page_manager.page_view_app_app-layout_builder-0
-  route_name: page_manager.page_view_project_project-layout_builder-0
-  weight: 1
-
-toolkit.flow_sync.status:
-  title: Status
-  base_route: page_manager.page_view_app_app-layout_builder-0
-  route_name: page_manager.page_view_status_status-layout_builder-0
-  weight: 2
-
 toolkit.user_account:
   title: Account
   parent_id: entity.user.edit_form

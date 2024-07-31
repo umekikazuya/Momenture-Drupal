@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Remove task entities.
+ */
+function toolkit_update_100001(&$sandbox) {
+  // Logger.
+  $logger = \Drupal::logger('toolkit');
+
+  $tasks = \Drupal::entityTypeManager()
+    ->getStorage('task');
+
+  $count = $success = $fail = 0;
+  foreach ($tasks as $task) {
+    $count++;
+
+    try {
+      $task_id = $task->id();
+      $task->delete();
+
+      $logger->info("Task ID:{$task_id}を削除しました。");
+
+      $success++;
+    }
+    catch (\Exception $e) {
+      $fail++;
+
+      $message = $e->getMessage();
+      $logger->info("Task ID:{$task_id}の削除に失敗しました。{$message}");
+    }
+  }
+
+  $logger->info("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
+
+}
+
+/**
+ * Remove project entities.
+ */
+function toolkit_update_100002(&$sandbox) {
+  // Logger.
+  $logger = \Drupal::logger('toolkit');
+
+  $projects = \Drupal::entityTypeManager()
+    ->getStorage('project');
+
+  $count = $success = $fail = 0;
+  foreach ($projects as $project) {
+    $count++;
+
+    try {
+      $project_id = $project->id();
+      $project->delete();
+
+      $logger->info("Project ID:{$project_id}を削除しました。");
+
+      $success++;
+    }
+    catch (\Exception $e) {
+      $fail++;
+
+      $message = $e->getMessage();
+      $logger->info("Project ID:{$project_id}の削除に失敗しました。{$message}");
+    }
+  }
+
+  $logger->info("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
+
+}
+
+/**
+ * Remove status entities.
+ */
+function toolkit_update_100003(&$sandbox) {
+  // Logger.
+  $logger = \Drupal::logger('toolkit');
+
+  $statuses = \Drupal::entityTypeManager()
+    ->getStorage('status');
+
+  $count = $success = $fail = 0;
+  foreach ($statuses as $status) {
+    $count++;
+
+    try {
+      $status_id = $status->id();
+      $status->delete();
+
+      $logger->info("Status ID:{$status_id}を削除しました。");
+
+      $success++;
+    }
+    catch (\Exception $e) {
+      $fail++;
+
+      $message = $e->getMessage();
+      $logger->info("Status ID:{$status_id}の削除に失敗しました。{$message}");
+    }
+  }
+
+  $logger->info("{$count}件のタスクを削除しました。成功:{$success}件 失敗:{$fail}");
+
+}
