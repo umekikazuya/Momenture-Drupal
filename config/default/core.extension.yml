@@ -49,6 +49,7 @@ module:
   path_alias: 0
   rabbit_hole: 0
   serialization: 0
+  syslog: 0
   system: 0
   taxonomy: 0
   text: 0
