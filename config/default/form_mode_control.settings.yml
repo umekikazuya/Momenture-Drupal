@@ -9,3 +9,7 @@
 'use  The form mode default linked to  status entity( status )': status.status.default
 'use  The form mode default linked to  task entity( repeat )': task.repeat.default
 'use  The form mode default linked to  config_pages entity( api )': config_pages.api.default
+'use  The form mode default linked to  article entity( mochiya )': article.mochiya.default
+'use  The form mode default linked to  article entity( qiita )': article.qiita.default
+'use  The form mode default linked to  article entity( zenn )': article.zenn.default
+'use  The form mode default linked to  config_pages entity( feature_ar )': config_pages.feature_ar.default

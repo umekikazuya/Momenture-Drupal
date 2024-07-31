@@ -4,20 +4,14 @@ toolkit:
   menu_name: toolkit
   weight: -20
 
-toolkit.flow_sync:
-  title: 'FlowSync'
-  route_name: page_manager.page_view_app_app-layout_builder-0
-  parent: toolkit
-  weight: -20
-
-toolkit.flow_sync.project:
-  title: 'Project'
-  route_name: page_manager.page_view_project_project-layout_builder-0
-  parent: toolkit.flow_sync
-  weight: -19
-
 toolkit.profile:
   title: 'Profile'
   route_name: toolkit.profile
   parent: toolkit
   weight: -19
+
+toolkit.feature_ar:
+  title: 'おすすめ記事'
+  route_name: config_pages.feature_ar
+  parent: toolkit
+  weight: -18
