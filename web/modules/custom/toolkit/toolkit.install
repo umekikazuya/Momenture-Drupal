@@ -132,4 +132,3 @@ function toolkit_update_100004(&$sandbox) {
   }
   $logger->notice("{$count}件のノードの削除を実行。成功:{$success}件 失敗:{$fail}件");
 }
-}
