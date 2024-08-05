@@ -1,0 +1,20 @@
+uuid: 68531982-a12d-4228-99e9-5fafb55bd188
+langcode: ja
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - gin
+id: lang_switcher
+theme: gin
+region: pre_content
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 言語の切り替え
+  label_display: '0'
+  provider: language
+visibility: {  }

@@ -1,0 +1,18 @@
+uuid: 077bb394-f52c-4ef0-8291-2f59b4a0a43d
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.qiita
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: article.qiita
+target_entity_type_id: article
+target_bundle: qiita
+default_langcode: site_default
+language_alterable: false

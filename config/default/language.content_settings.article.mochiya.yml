@@ -1,0 +1,18 @@
+uuid: 8de0d752-b3f3-4883-95ed-4253c00e8d04
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.mochiya
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: article.mochiya
+target_entity_type_id: article
+target_bundle: mochiya
+default_langcode: site_default
+language_alterable: false

@@ -11,6 +11,7 @@ module:
   ckeditor5: 0
   config: 0
   config_pages: 0
+  config_translation: 0
   contextual: 0
   ctools: 0
   datetime: 0
@@ -59,6 +60,7 @@ module:
   user: 0
   verf: 0
   views_ui: 0
+  content_translation: 10
   views: 10
   standard: 1000
 theme:

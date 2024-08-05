@@ -1,0 +1,18 @@
+uuid: c5ef125a-4d24-4c62-9e21-a2786a387bf4
+langcode: ja
+status: true
+dependencies:
+  config:
+    - eck.eck_type.article.zenn
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: article.zenn
+target_entity_type_id: article
+target_bundle: zenn
+default_langcode: site_default
+language_alterable: false
