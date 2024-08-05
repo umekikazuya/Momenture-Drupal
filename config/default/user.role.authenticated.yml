@@ -35,6 +35,7 @@ permissions:
   - 'edit any article entities'
   - 'edit api config page entity'
   - 'edit feature_ar config page entity'
+  - 'translate editable entities'
   - 'update content translations'
   - 'use text format basic_html'
   - 'view any article entities'

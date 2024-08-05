@@ -8,8 +8,8 @@ dependencies:
     - gin
 id: lang_switcher
 theme: gin
-region: pre_content
-weight: 0
+region: help
+weight: -3
 provider: null
 plugin: 'language_block:language_interface'
 settings:
