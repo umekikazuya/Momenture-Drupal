@@ -116,16 +116,20 @@ function toolkit_update_100004(&$sandbox) {
   // Logger.
   $logger = \Drupal::logger('toolkit');
   $entity_type_manager = \Drupal::entityTypeManager();
-  $message = '';
+  $success = 0;
+  $fail = 0;
   $node_storage = $entity_type_manager->getStorage('node');
   $nodes = $node_storage->loadMultiple();
   $count = count($nodes);
   try {
     $node_storage->delete($nodes);
+    $success = $count;
   }
   catch (\Exception $e) {
     $message = $e->getMessage();
-    $logger->error("Nodeの削除に失敗." . $message);
+    $logger->error("Nodeの削除に失敗しました。エラー: " . $message);
+    $fail = $count;
   }
-  $logger->notice("{$count}件のノードの削除を実行。成功:{$count}件");
+  $logger->notice("{$count}件のノードの削除を実行。成功:{$success}件 失敗:{$fail}件");
+}
 }
