@@ -13,15 +13,15 @@ logo:
 third_party_settings:
   shortcut:
     module_link: true
-preset_accent_color: dark_purple
+preset_accent_color: purple
 preset_focus_color: accent
-enable_darkmode: '0'
-classic_toolbar: new
+enable_darkmode: '1'
+classic_toolbar: vertical
 secondary_toolbar_frontend: false
 high_contrast_mode: false
 accent_color: '#f2f2f2'
 focus_color: ''
-layout_density: medium
+layout_density: default
 show_description_toggle: true
 show_user_theme_settings: false
 sticky_action_buttons: false
