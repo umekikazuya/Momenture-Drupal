@@ -17,8 +17,8 @@ preset_accent_color: purple
 preset_focus_color: accent
 enable_darkmode: '1'
 classic_toolbar: vertical
-secondary_toolbar_frontend: false
-high_contrast_mode: false
+secondary_toolbar_frontend: true
+high_contrast_mode: true
 accent_color: '#f2f2f2'
 focus_color: ''
 layout_density: default

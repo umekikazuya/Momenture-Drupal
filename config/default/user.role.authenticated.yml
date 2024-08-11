@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
   module:
     - config_pages
+    - content_translation
     - eck
     - file
     - filter
@@ -27,26 +28,18 @@ permissions:
   - 'cancel account'
   - 'change own username'
   - 'create article entities'
-  - 'create project entities'
-  - 'create status entities'
-  - 'create task entities'
+  - 'create content translations'
   - 'delete any article entities'
+  - 'delete content translations'
   - 'delete own files'
-  - 'delete own project entities'
-  - 'delete own status entities'
-  - 'delete own task entities'
   - 'edit any article entities'
   - 'edit api config page entity'
   - 'edit feature_ar config page entity'
-  - 'edit own project entities'
-  - 'edit own status entities'
-  - 'edit own task entities'
+  - 'translate editable entities'
+  - 'update content translations'
   - 'use text format basic_html'
   - 'view any article entities'
   - 'view api config page entity'
   - 'view feature_ar config page entity'
-  - 'view own project entities'
-  - 'view own status entities'
-  - 'view own task entities'
   - 'view the administration theme'
   - 'view user email addresses'

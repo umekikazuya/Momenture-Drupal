@@ -59,6 +59,7 @@ module:
   user: 0
   verf: 0
   views_ui: 0
+  content_translation: 10
   views: 10
   standard: 1000
 theme:
