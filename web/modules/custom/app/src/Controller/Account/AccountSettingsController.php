@@ -16,12 +16,13 @@ final class AccountSettingsController extends ControllerBase {
    * Builds the response.
    */
   public function __invoke(): array {
+    $form = [];
     $user = $this->entityTypeManager()->getStorage('user')->load($this->currentUser()->id());
     if ($user instanceof UserInterface) {
-      return $this->entityFormBuilder()->getForm($user, 'settings');
+      $form = $this->entityFormBuilder()->getForm($user, 'settings');
     }
 
-    return [];
+    return $form;
   }
 
 }

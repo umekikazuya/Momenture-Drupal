@@ -42,7 +42,7 @@ class ToolkitManager {
    * Build dashboard.
    */
   public function buildIndex() {
-    $link = $this->menuActiveTrail->getActiveLink('toolkit');
+    $link = $this->menuActiveTrail->getActiveLink('app');
     if ($link && $content = $this->getAdminBlock($link)) {
       $build = [
         '#theme' => 'admin_block_content',

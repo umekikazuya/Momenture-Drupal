@@ -1,5 +1,13 @@
 # アカウント設定.
-## 共通設定
+## 共通設定.
+app.account:
+  path: "/account"
+  defaults:
+    _title: "アカウント"
+    _controller: '\Drupal\app\Controller\Account\AccountController'
+  requirements:
+    _role: "authenticated"
+
 app.account.settings:
   path: "/account/settings"
   defaults:
@@ -8,6 +16,7 @@ app.account.settings:
   requirements:
     _role: "authenticated"
 
+## プロフィール.
 app.account.profile:
   path: "/account/profile"
   defaults:
@@ -15,3 +24,11 @@ app.account.profile:
     _controller: '\Drupal\app\Controller\Account\AccountProfileController'
   requirements:
     _role: "authenticated"
+
+toolkit.app:
+  path: '/app'
+  defaults:
+    _controller: "\\Drupal\\toolkit\\Controller\\ToolkitController::index"
+    _title: 'Momenture'
+  requirements:
+    _role: 'authenticated'

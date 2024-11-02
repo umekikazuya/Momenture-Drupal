@@ -1,7 +1,0 @@
-toolkit.app:
-  path: '/app'
-  defaults:
-    _controller: "\\Drupal\\toolkit\\Controller\\ToolkitController::index"
-    _title: 'Momenture'
-  requirements:
-    _role: 'authenticated'

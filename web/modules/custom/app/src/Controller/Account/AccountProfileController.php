@@ -20,7 +20,6 @@ final class AccountProfileController extends ControllerBase {
     if ($user instanceof UserInterface) {
       return $this->entityFormBuilder()->getForm($user, 'profile');
     }
-
     return [];
   }
 

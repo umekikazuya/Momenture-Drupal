@@ -4,6 +4,7 @@ namespace Drupal\app\Form\Account;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\ProfileForm;
+use Drupal\user\UserInterface;
 
 /**
  * アカウント - 共通設定.
@@ -13,7 +14,7 @@ class AccountSettingsForm extends ProfileForm {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?UserInterface $user = NULL) {
     $form = parent::buildForm($form, $form_state);
 
     // フォームモードを設定.
