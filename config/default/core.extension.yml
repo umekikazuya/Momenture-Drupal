@@ -12,7 +12,6 @@ module:
   config: 0
   config_pages: 0
   contextual: 0
-  ctools: 0
   datetime: 0
   dynamic_page_cache: 0
   eck: 0
@@ -31,9 +30,6 @@ module:
   jsonapi: 0
   jsonapi_extras: 0
   language: 0
-  layout_builder: 0
-  layout_builder_expose_all_field_blocks: 0
-  layout_discovery: 0
   link: 0
   locale: 0
   menu_link_content: 0
@@ -43,11 +39,8 @@ module:
   notfound: 0
   options: 0
   page_cache: 0
-  page_manager: 0
-  page_manager_ui: 0
   path: 0
   path_alias: 0
-  rabbit_hole: 0
   serialization: 0
   syslog: 0
   system: 0
@@ -57,7 +50,6 @@ module:
   toolkit: 0
   update: 0
   user: 0
-  verf: 0
   views_ui: 0
   content_translation: 10
   views: 10
