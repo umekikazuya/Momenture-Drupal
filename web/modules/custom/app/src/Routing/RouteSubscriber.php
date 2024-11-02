@@ -15,8 +15,11 @@ class RouteSubscriber extends RouteSubscriberBase {
    */
   protected function alterRoutes(RouteCollection $collection) {
 
-    // UserEntityの`canonical`ルートを削除.
-    $collection->remove('entity.user.canonical');
+    // UserEntityの`canonical`ルートを変更.
+    if ($route = $collection->get('entity.user.canonical')) {
+      $route->setPath('/account/settings');
+      $route->setDefault('_controller', '\Drupal\app\Controller\Account\AccountSettingsController');
+    }
   }
 
 }

@@ -1,0 +1,54 @@
+uuid: 1320542b-4cdf-4e19-8dd7-15492ecf5b0b
+langcode: ja
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.settings
+    - field.field.user.user.field_address
+    - field.field.user.user.field_display_name
+    - field.field.user.user.field_display_short_name
+    - field.field.user.user.field_from
+    - field.field.user.user.field_github
+    - field.field.user.user.field_introduction
+    - field.field.user.user.field_job
+    - field.field.user.user.field_like
+    - field.field.user.user.field_qiita
+    - field.field.user.user.field_skill
+    - field.field.user.user.field_summary_introduction
+    - field.field.user.user.field_zenn
+  module:
+    - user
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.settings
+targetEntityType: user
+bundle: user
+mode: settings
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+  timezone:
+    weight: 6
+    region: content
+hidden:
+  field_address: true
+  field_display_name: true
+  field_display_short_name: true
+  field_from: true
+  field_github: true
+  field_introduction: true
+  field_job: true
+  field_like: true
+  field_qiita: true
+  field_skill: true
+  field_summary_introduction: true
+  field_zenn: true
+  langcode: true
+  language: true
+  translation: true

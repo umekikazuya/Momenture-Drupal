@@ -5,11 +5,3 @@ toolkit.app:
     _title: 'Momenture'
   requirements:
     _role: 'authenticated'
-
-toolkit.profile:
-  path: '/app/profile'
-  defaults:
-    _controller: "\\Drupal\\toolkit\\Controller\\ToolkitController::profileSettings"
-    _title: 'Prorile'
-  requirements:
-    _role: 'authenticated'

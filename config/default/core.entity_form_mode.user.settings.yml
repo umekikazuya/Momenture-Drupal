@@ -1,0 +1,11 @@
+uuid: 76a99da7-663c-4d53-b881-f88014f50591
+langcode: ja
+status: true
+dependencies:
+  module:
+    - user
+id: user.settings
+label: 共通設定
+description: ''
+targetEntityType: user
+cache: true

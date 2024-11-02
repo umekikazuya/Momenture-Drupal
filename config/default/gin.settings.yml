@@ -15,10 +15,10 @@ third_party_settings:
     module_link: true
 preset_accent_color: purple
 preset_focus_color: accent
-enable_darkmode: '1'
-classic_toolbar: vertical
+enable_darkmode: '0'
+classic_toolbar: horizontal
 secondary_toolbar_frontend: true
-high_contrast_mode: true
+high_contrast_mode: false
 accent_color: '#f2f2f2'
 focus_color: ''
 layout_density: default
