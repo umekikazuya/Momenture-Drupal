@@ -6,8 +6,8 @@ name: Diary
 mail: kazuyaumeki1115@gmail.com
 slogan: ''
 page:
-  403: /404
-  404: /404
+  403: ''
+  404: ''
   front: /app
 admin_compact_mode: false
 weight_select_max: 100
