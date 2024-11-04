@@ -10,7 +10,6 @@ dependencies:
     - eck
     - file
     - filter
-    - form_mode_control
     - system
     - toolbar
 _core:
@@ -24,7 +23,6 @@ permissions:
   - 'access site reports'
   - 'access toolbar'
   - 'access user profiles'
-  - access_all_form_modes
   - 'cancel account'
   - 'change own username'
   - 'create article entities'

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\app\Form\Account\AccountProfileForm;
+use Drupal\app\Form\Account\AccountSettingsForm;
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function app_entity_type_build(array &$entity_types) {
+  if (isset($entity_types['user'])) {
+    $entity_types['user']->setFormClass('settings', AccountSettingsForm::class);
+    $entity_types['user']->setFormClass('profile', AccountProfileForm::class);
+  }
+}

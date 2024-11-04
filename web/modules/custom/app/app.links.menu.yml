@@ -1,17 +1,17 @@
-toolkit:
+app:
   title: 'App'
   route_name: toolkit.app
-  menu_name: toolkit
+  menu_name: app
   weight: -20
 
-toolkit.profile:
-  title: 'Profile'
-  route_name: toolkit.profile
-  parent: toolkit
+app.account:
+  title: 'アカウント設定'
+  route_name: app.account
+  parent: app
   weight: -19
 
-toolkit.feature_ar:
+app.feature_ar:
   title: 'おすすめ記事'
   route_name: config_pages.feature_ar
-  parent: toolkit
+  parent: app
   weight: -18
