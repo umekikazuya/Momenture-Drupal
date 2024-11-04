@@ -1,0 +1,71 @@
+<div class="not-found-page">
+  <div class="not-found-page__content">
+    <h1 class="not-found-page__title">{{ title }}</h1>
+    <p class="not-found-page__description">
+      Sorry, the page you’re looking for doesn’t exist or has been moved.
+    </p>
+    <a href="{{ path('<front>') }}" class="not-found-page__link">Back to Home</a>
+  </div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+  }
+  /* 全体の背景とレイアウト */
+  .not-found-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* ナチュラルなオフホワイト */
+    text-align: center;
+    color: #333;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* コンテンツエリアの最大幅と配置 */
+  .not-found-page__content {
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #ffffff; /* 落ち着いたホワイト */
+    border: 1px solid #d0d0cc; /* 控えめなボーダーでシンプルに */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 控えめなシャドウで上品さをプラス */
+  }
+
+  /* タイトルデザイン */
+  .not-found-page__title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #3a3a3a; /* 濃いグレーで落ち着いた印象 */
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+  }
+
+  /* 説明テキスト */
+  .not-found-page__description {
+    font-size: 1.1rem;
+    color: #6e6e6e; /* ナチュラルなトーンのグレー */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  /* 戻るリンクボタン */
+  .not-found-page__link {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: #3a3a3a; /* 落ち着いた濃いグレー */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .not-found-page__link:hover {
+    background-color: #6e6e6e; /* ホバーで少し明るく */
+    color: #ffffff;
+  }
+</style>

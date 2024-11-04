@@ -1,5 +1,15 @@
 services:
-  app.route_subscriber:
+  # ルーティング.
+  app.route.subscriber:
     class: Drupal\app\Routing\RouteSubscriber
+    tags:
+      - { name: "event_subscriber" }
+  # 404系.
+  app.not_found_page.controller:
+    class: Drupal\app\Controller\Exception\NotFoundPageController
+    arguments: ["@renderer"]
+  app.http_exception.subscriber:
+    class: Drupal\app\EventSubscriber\HttpExceptionSubscriber
+    arguments: ["@app.not_found_page.controller"]
     tags:
       - { name: "event_subscriber" }

@@ -16,3 +16,16 @@ function app_entity_type_build(array &$entity_types) {
     $entity_types['user']->setFormClass('profile', AccountProfileForm::class);
   }
 }
+
+/**
+ * hook_theme().
+ */
+function app_theme($existing, $type, $theme, $path) {
+  return [
+    'page_404' => [
+      'variables' => ['title' => NULL],
+      'template' => '404',
+      'path' => $path . '/templates/4xx',
+    ],
+  ];
+}
